@@ -198,11 +198,23 @@ nav {
 }
 nav ul {
   box-sizing: border-box;
-  padding: 6px 40px;
+  padding: 6px 40px 6px 40px;
   margin: auto;
   max-width: 1500px;
   display: flex;
   list-style: none;
+}
+
+@media (max-width: 900px) {
+  nav ul {
+    padding: 6px 20px 6px 40px;
+  }
+}
+
+@media (max-width: 520px) {
+  nav ul {
+    padding: 6px 0px 6px 24px;
+  }
 }
 nav a {
   height: 100%;
