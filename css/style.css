@@ -812,6 +812,12 @@ iframe {
   cursor: pointer;
 }
 
+@media (max-width: 520px) {
+  .checkItem {
+    padding: 8px;
+  }
+}
+
 .checkItem span {
   font-family: var(--ff-display);
   font-weight: 300;
