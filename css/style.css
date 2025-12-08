@@ -1,0 +1,1139 @@
+* {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Colores */
+  --primary-color: #407135;
+  --primary-color-hover: #2d5624;
+  --grey-300: #111;
+
+  /* Shadows */
+  --shadow-m1: 0px 1px 2px 0px rgba(0, 0, 0, 0.3),
+    0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  --shadow-m2: 0px 1px 2px 0px rgba(0, 0, 0, 0.3),
+    0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+  --shadow-m3: 0px 4px 8px 3px rgba(0, 0, 0, 0.15),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.3);
+  --shadow-m4: 0px 6px 10px 4px rgba(0, 0, 0, 0.15),
+    0px 2px 3px 0px rgba(0, 0, 0, 0.3);
+  --shadow-m5: 0px 8px 12px 6px rgba(0, 0, 0, 0.15),
+    0px 4px 4px 0px rgba(0, 0, 0, 0.3);
+
+  /* Fuentes */
+  --ff-display: "Londrina Solid", sans-serif;
+  --ff-body: "Poppins", sans-serif;
+
+  /* Tamaños */
+  --fs-display: 74px;
+  --fs-h1: 48px;
+  --fs-h2: 40px;
+  --fs-h3: 32px;
+  --fs-h4: 28px;
+
+  --fs-subtitle-1: 24px;
+  --fs-subtitle-2: 20px;
+
+  --fs-lead: 18px;
+  --fs-body: 16px;
+  --fs-small: 14px;
+  --fs-tiny: 12px;
+
+  /* Line-height */
+  --lh-display: 0.85; /* 85% */
+  --lh-heading: 1.2; /* 120% */
+  --lh-subtitle: 1.4; /* 140% */
+  --lh-body: 1.4; /* 140% */
+}
+
+/* Display y headings usan Londrina */
+.typ-display {
+  font-family: var(--ff-display);
+  font-size: var(--fs-display);
+  line-height: var(--lh-display);
+  text-shadow: 0px 5px 0px var(--grey-300);
+  font-weight: 500;
+}
+.typ-h1 {
+  font-family: var(--ff-display);
+  font-size: var(--fs-h1);
+  line-height: var(--lh-heading);
+  font-weight: 500;
+}
+
+.typ-h2 {
+  font-family: var(--ff-display);
+  font-size: var(--fs-h2);
+  line-height: var(--lh-heading);
+  font-weight: 500;
+}
+
+.typ-h3 {
+  font-family: var(--ff-display);
+  font-size: var(--fs-h3);
+  line-height: var(--lh-heading);
+  font-weight: 500;
+}
+
+.typ-h4 {
+  font-family: var(--ff-display);
+  font-size: var(--fs-h4);
+  line-height: var(--lh-heading);
+  font-weight: 500;
+}
+
+.typ-subtitle-1 {
+  font-family: var(--ff-body);
+  font-size: var(--fs-subtitle-1);
+  line-height: var(--lh-subtitle);
+  font-weight: 500;
+}
+
+.typ-subtitle-2 {
+  font-family: var(--ff-body);
+  font-size: var(--fs-subtitle-2);
+  line-height: var(--lh-subtitle);
+}
+
+.typ-lead {
+  font-family: var(--ff-body);
+  font-size: var(--fs-lead);
+  line-height: var(--lh-subtitle);
+}
+
+.typ-body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+}
+
+.typ-small {
+  font-family: var(--ff-body);
+  font-size: var(--fs-small);
+  line-height: var(--lh-body);
+}
+
+.typ-tiny {
+  font-family: var(--ff-body);
+  font-size: var(--fs-tiny);
+  line-height: var(--lh-body);
+}
+
+/**************************************** General Styles ****************************************/
+
+body {
+  background-color: #f1f1f1;
+  color: var(--grey-300);
+  min-height: 100vh;
+}
+
+.sectionContentContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  max-width: 1420px;
+  gap: 40px;
+  flex-direction: column;
+}
+section {
+  margin-bottom: 120px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.sectionTitleContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: center;
+}
+
+#WhatsappButton {
+  position: fixed;
+  right: 10%;
+  bottom: 10%;
+
+  z-index: 9999;
+  cursor: pointer;
+
+  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.2));
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+#WhatsappButton:hover {
+  transform: translateY(-3px);
+  filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.25));
+}
+
+#WhatsappButton:active {
+  transform: translateY(1px);
+}
+/**************************************** Buttons ****************************************/
+
+.btnPrimary {
+  font-family: var(--ff-display);
+  font-size: 20px;
+  font-weight: 400;
+  width: 277px;
+  text-decoration: none;
+  color: var(--grey-300);
+  background-color: white;
+  padding: 12px 54px;
+  border-radius: 12px;
+  border: solid 2px var(--grey-300);
+  box-shadow: 0px 6px var(--grey-300);
+  text-align: center;
+  z-index: 1;
+}
+
+.btnPrimary:hover {
+  cursor: pointer;
+  background-color: #d3d3d3;
+}
+
+.btnPrimary:active {
+  transform: translateY(6px);
+  box-shadow: none;
+  border: solid 2px white;
+  color: white;
+  background-color: rgb(12, 41, 25);
+}
+
+.btnSecondary {
+  width: fit-content;
+  font-family: "Poppins", sans-serif;
+  color: var(--grey-300);
+  background-color: white;
+  border-radius: 8px;
+  font-size: 16px;
+  padding: 12px 24px;
+  box-shadow: var(--shadow-m1);
+  border: none;
+  text-decoration: none;
+  transition: transform 0.15s ease;
+}
+
+.btnSecondary:hover {
+  transform: translateY(-2px);
+  cursor: pointer;
+  box-shadow: var(--shadow-m2);
+}
+
+/**************************************** NavBar ****************************************/
+
+nav {
+  background-color: var(--primary-color);
+  box-shadow: var(--shadow-m1);
+}
+nav ul {
+  padding: 6px 40px;
+  margin: auto;
+  max-width: 1500px;
+  display: flex;
+  list-style: none;
+}
+nav a {
+  height: 100%;
+  padding: 0 30px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  border-radius: 2px;
+  color: white;
+}
+
+nav a:hover {
+  background-color: var(--primary-color-hover);
+}
+
+nav li:first-child {
+  margin-right: auto;
+}
+nav li:last-child {
+  margin-left: auto;
+}
+
+.fa-xmark,
+.fa-bars {
+  color: white;
+  font-size: 24px;
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  z-index: 999;
+  background-color: var(--primary-color);
+  box-shadow: var(--shadow-m5);
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  display: none;
+  padding: 0;
+}
+
+.sidebar li {
+  text-align: left;
+  width: 100%;
+}
+
+.sidebar a {
+  height: 100%;
+  padding: 15px 30px;
+  width: 100%;
+}
+.sidebar li:last-child {
+  display: none;
+}
+
+.menu-button {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .hideOnMobile {
+    display: none;
+  }
+
+  .menu-button {
+    display: block;
+  }
+}
+
+@media (max-width: 400px) {
+  .sidebar {
+    width: 100%;
+  }
+}
+
+/**************************************** Hero ****************************************/
+
+.heroImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 750px;
+  background-image: linear-gradient(
+      rgba(61, 105, 53, 0.5),
+      rgba(61, 105, 53, 0.5)
+    ),
+    url("/Assets/MovalHero.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.heroContentContainer {
+  display: flex;
+  color: white;
+  text-align: left;
+  width: 100%;
+  display: flex;
+  gap: 64px;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  flex: 0.3;
+  gap: 48px;
+}
+
+.heroTextContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.heroTitleContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.heroSubtitleContainer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.heroSubtitle {
+  color: #fff;
+  font-size: var(--fs-subtitle-1);
+  text-shadow: 0px 2px 0px var(--grey-300);
+  font-weight: 400;
+}
+
+/* líneas izquierda y derecha */
+.heroSubtitleContainer::before,
+.heroSubtitleContainer::after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 60px;
+  border-radius: 999px;
+  background-color: #fff;
+  box-shadow: 0px 2px 0px #1b1b1b;
+}
+
+.ctaContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/**************************************** About ****************************************/
+
+.sectionAboutContent {
+  display: flex;
+  gap: 40px;
+  width: 100%;
+  align-items: stretch;
+}
+
+.divAboutLeft,
+.divAboutRight {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* Izquierda */
+.divAboutLeft {
+  display: flex;
+  align-items: center;
+}
+
+.imageCard {
+  width: 100%;
+  height: 700px;
+  padding: 16px;
+  background-color: #fff;
+  box-shadow: var(--shadow-m1);
+  border-radius: 12px;
+  transform: rotate(-1.3deg);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* Contenedor derecho (tu bloque rojo) */
+.divAboutRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  gap: 32px;
+
+  padding: clamp(16px, 3vw, 32px);
+}
+
+/* Contenedor de post-its */
+.divAboutPostitContainer {
+  width: 100%;
+  max-width: 100%;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+
+  gap: clamp(8px, 1.2vw, 16px);
+}
+
+/* Post-it base */
+.divAboutPostit {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  height: fit-content;
+  padding: clamp(10px, 2rem, 144541px);
+  flex: 1 1 1;
+  max-width: 220px;
+  box-shadow: var(--shadow-m1);
+  min-width: 0;
+}
+
+/* Tipos dentro */
+.divAboutPostit p {
+  font-family: var(--ff-display);
+  font-weight: 300;
+  font-size: clamp(16px, 1.2vw, 20px);
+  line-height: 1.1;
+}
+
+.divAboutPostit span {
+  font-family: var(--ff-body);
+  font-weight: 500;
+  font-size: clamp(11px, 0.95vw, 14px);
+  opacity: 0.8;
+}
+
+/* Colores + rotaciones suaves */
+.postIt1 {
+  background-color: #87cddc;
+  transform: rotate(-2.5deg);
+  transition: 200ms;
+}
+.postIt1:hover {
+  transform: rotate(6deg);
+  box-shadow: var(--shadow-m4);
+}
+.postIt2 {
+  background-color: #eee8a2;
+  transform: rotate(-1.8deg);
+  transition: 200ms;
+}
+.postIt2:hover {
+  transform: rotate(6deg);
+  box-shadow: var(--shadow-m4);
+}
+.postIt3 {
+  background-color: #e0b4e8;
+  transform: rotate(2.2deg);
+  transition: 200ms;
+}
+.postIt3:hover {
+  transform: rotate(-4.2deg);
+  box-shadow: var(--shadow-m4);
+}
+
+@media (max-width: 900px) {
+  .divAboutPostit {
+    flex: 1 1 clamp(150px, 45%, 220px);
+    max-width: none;
+  }
+  .sectionAboutContent {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    height: fit-content;
+  }
+}
+
+/**************************************** Padre Lucas ****************************************/
+
+.padreLucasContent {
+  display: flex;
+  gap: 40px;
+  width: 100%;
+  align-items: stretch;
+}
+
+.padreLucasImg {
+  padding: 16px;
+  flex: 2 1 0;
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: var(--shadow-m2);
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.padreLucasImg img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.padreLucasTextContainer {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+@media (max-width: 900px) {
+  .padreLucasContent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .padreLucasTextContainer {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
+
+/**************************************** Our Team ****************************************/
+
+.ourTeamCards {
+  width: 100%;
+  display: flex;
+  gap: 40px;
+}
+
+@media (max-width: 900px) {
+  .ourTeamCards {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+  }
+}
+.ourTeamCard {
+  padding: 2vw;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 12px;
+  box-shadow: var(--shadow-m1);
+  gap: 24px;
+}
+
+.ourTeamCardTextContainer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 12px;
+}
+.ourTeamCard img {
+  border-radius: 8px;
+  aspect-ratio: 4/3;
+  width: 100%;
+  background-color: rgb(194, 194, 194);
+}
+
+/**************************************** Activities ****************************************/
+
+.activitiesSection {
+  width: 100%;
+}
+
+.activitiesGrid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 2.2vw, 40px);
+}
+
+/* Cambio principal a 2 columnas */
+@media (max-width: 900px) {
+  .activitiesGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Extra opcional para celulares chicos */
+@media (max-width: 520px) {
+  .activitiesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------------------------------------------------------
+   Card base
+--------------------------------------------------------- */
+
+.activityCard {
+  position: relative;
+  width: 100%;
+  min-height: clamp(140px, 18vw, 200px);
+  padding: clamp(16px, 2vw, 28px);
+
+  display: flex;
+  align-items: flex-end;
+
+  border-radius: 12px;
+  background-color: #fff;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  box-shadow: var(--shadow-m2);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.activityCard:hover {
+  box-shadow: var(--shadow-m4);
+  transform: translateY(-2px);
+}
+
+/* Título dentro de la card */
+.activityTitle {
+  margin: 0;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+
+/* ---------------------------------------------------------
+   Fondos por actividad
+   Mantenible y fácil de editar
+--------------------------------------------------------- */
+
+.activityFogones {
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)),
+    url("/Assets/Actividad_Fogones.png");
+}
+
+.activityEnsayos {
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)),
+    url("/Assets/Actividad_Caminata.png");
+}
+
+.activityReflexion {
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)),
+    url("/Assets/Actividad_Reflexion.png");
+}
+
+.activityJuegosNocturnos {
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)),
+    url("/Assets/Actividad_Juegos_Nocturnos.png");
+}
+
+.activityCocina {
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)),
+    url("/Assets/Actividad_Cocina.png");
+}
+
+.activityCaminatas {
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7)),
+    url("/Assets/Actividad_Caminata.png");
+}
+
+/**************************************** Map ****************************************/
+
+iframe {
+  padding: 16px;
+  width: 100%;
+  height: 550px;
+  background-color: white;
+  border-radius: 24px;
+  box-shadow: var(--shadow-m2);
+}
+
+/**************************************** CheckList ****************************************/
+
+.checkListSectionContent {
+  display: flex;
+  width: 100%;
+}
+
+.checkList {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+}
+.checkItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  cursor: pointer;
+}
+
+.checkItem span {
+  font-family: var(--ff-display);
+  font-weight: 300;
+  font-size: 20px;
+}
+
+.checkItem input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+
+  width: 24px;
+  height: 24px;
+  border: 4px solid #000;
+  background: #fff;
+
+  display: grid;
+  place-content: center;
+
+  cursor: pointer;
+  transform: rotate(var(--rot));
+}
+
+.checkItem:nth-child(5n + 1) {
+  --rot: -4deg;
+}
+.checkItem:nth-child(5n + 2) {
+  --rot: 2.5deg;
+}
+.checkItem:nth-child(5n + 3) {
+  --rot: -1.5deg;
+}
+.checkItem:nth-child(5n + 4) {
+  --rot: 4deg;
+}
+.checkItem:nth-child(5n + 5) {
+  --rot: 0.8deg;
+}
+
+.checkItem input[type="checkbox"]::after {
+  content: "";
+  display: block;
+
+  width: 12px;
+  height: 6px;
+
+  border-left: 4px solid #000;
+  border-bottom: 4px solid #000;
+
+  transform: rotate(-45deg) scale(0);
+  transform-origin: center;
+
+  transition: transform 0.1s ease;
+}
+
+.checkItem input[type="checkbox"]:checked::after {
+  transform: rotate(-45deg) scale(1);
+}
+
+/* opcional: estilo cuando está marcado */
+.checkItem input:checked + span {
+  text-decoration: line-through;
+  opacity: 0.65;
+}
+
+.checkListPhotos {
+  flex: 2 1 0;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 900px) {
+  .checkListPhotos {
+    display: none;
+  }
+  .checkList {
+    align-items: center;
+  }
+}
+/**************************************** FAQ ****************************************/
+
+.FaqContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  align-items: center;
+}
+.Faq {
+  width: 75%;
+  padding: 14px 16px;
+  border: solid 2px var(--grey-300);
+  box-shadow: 0px 3px var(--grey-300);
+  background-color: white;
+  display: flex;
+  border-radius: 12px;
+  justify-content: space-between;
+}
+
+.Faq:hover {
+  cursor: pointer;
+}
+
+/**************************************** Footer ****************************************/
+
+#FooterSection {
+  margin: 0;
+}
+
+.footerContentContainer {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+
+  max-width: 1420px;
+  flex-direction: column;
+}
+.footerTextContainer {
+  transform: translateY(8rem);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  text-align: center;
+  align-items: center;
+  max-width: 75%;
+}
+
+.sunrise {
+  background-image: linear-gradient(
+    rgba(241, 241, 241, 1),
+    rgba(255, 205, 161, 1)
+  );
+  width: 100%;
+}
+
+/******************************************************************************** Form ********************************************************************************/
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  margin-top: 64px;
+}
+
+/* Sections del form */
+.listaDeCosasALlevar,
+.fichaDelAcampante {
+  width: 100%;
+  padding: 0 40px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* Card contenedora */
+.sectionCardStyleContainer {
+  width: 100%;
+  max-width: 1420px;
+  padding: 40px 75px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  background-color: #ffffff;
+  box-shadow: var(--shadow-m2);
+}
+
+/* Responsive general de la card */
+@media (max-width: 900px) {
+  .sectionCardStyleContainer {
+    padding: 28px 28px;
+  }
+}
+@media (max-width: 520px) {
+  .listaDeCosasALlevar,
+  .fichaDelAcampante {
+    padding: 0 16px;
+  }
+  .sectionCardStyleContainer {
+    padding: 22px 18px;
+  }
+}
+
+/* =========================================================
+   5) Bloque lista de cosas
+========================================================= */
+.itemsListContainer {
+  width: 100%;
+  display: flex;
+  gap: 64px;
+  align-items: flex-start;
+}
+
+.itemsList,
+.importantContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.costo {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 8px;
+}
+
+@media (max-width: 900px) {
+  .itemsListContainer {
+    flex-direction: column;
+    gap: 32px;
+  }
+}
+
+/* =========================================================
+   6) Form layout
+========================================================= */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Nueva fila ordenada para labels + controles */
+.formRow {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  width: 100%;
+}
+
+/* Etiqueta */
+.formLabel {
+  flex: 0.4;
+}
+
+/* Control base (input/select) */
+.formControl {
+  flex: 1;
+  padding: 16px 24px;
+  border: none;
+  box-shadow: var(--shadow-m1);
+  font-family: var(--ff-body);
+  background: #fff;
+}
+
+/* En pantallas chicas, label arriba */
+@media (max-width: 820px) {
+  .formRow {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  .formLabel {
+    flex: 1;
+  }
+}
+
+/* Agrupación de secciones dentro del form */
+.formSection {
+  border: none;
+  padding: 0;
+  margin-top: 10px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.formSection > legend {
+  margin-bottom: 8px;
+}
+
+/* =========================================================
+   7) Checks de salud
+========================================================= */
+.healthFieldset {
+  border: none;
+  padding: 0;
+  margin: 6px 0 2px 0;
+}
+
+.healthFieldset legend {
+  margin-bottom: 10px;
+}
+
+/* Grid responsive para los checks */
+.healthCheckboxGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(160px, 1fr));
+  gap: 10px 18px;
+}
+
+.healthCheck {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.healthCheck input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--grey-300);
+}
+
+@media (max-width: 520px) {
+  .healthCheckboxGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 1100px) {
+  .healthCheckboxGrid {
+    grid-template-columns: repeat(3, minmax(180px, 1fr));
+  }
+}
+
+/* =========================================================
+   8) Tabla de medicación
+========================================================= */
+.formTableBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.formTableWrap {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 16px;
+  box-shadow: var(--shadow-m1);
+  background: #fff;
+}
+
+.formTable {
+  width: 100%;
+  min-width: 520px;
+  border-collapse: collapse;
+}
+
+.formTable thead th {
+  text-align: left;
+  padding: 14px 16px;
+  background: #fafafa;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.formTable td {
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.formTable tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.formTable thead th + th,
+.formTable td + td {
+  border-left: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.tableInput {
+  width: 100%;
+  padding: 12px 14px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--ff-body);
+}
+
+.tableHint {
+  opacity: 0.65;
+}
+
+@media (min-width: 900px) {
+  .formTable {
+    min-width: 0;
+  }
+}
