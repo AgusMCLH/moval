@@ -547,7 +547,7 @@ nav li:last-child {
   }
 }
 
-/**************************************** Padre Lucas ****************************************/
+/***************************************** Padre Lucas *****************************************/
 
 .padreLucasContent {
   display: flex;
@@ -566,8 +566,8 @@ nav li:last-child {
 }
 
 .padreLucasImg img {
+  height: 400px;
   width: 100%;
-  height: 100%;
   border-radius: 8px;
   object-fit: cover;
 }
@@ -616,7 +616,6 @@ nav li:last-child {
   }
 }
 
-/**************************************** Our Team ****************************************/
 /**************************************** Our Team ****************************************/
 .ourTeamSection {
   display: flex;
@@ -668,6 +667,10 @@ nav li:last-child {
     width: 100%;
     flex-direction: column;
     gap: 20px;
+  }
+
+  .ourTeamCard {
+    gap: 12px;
   }
 }
 /**************************************** Activities ****************************************/
@@ -770,7 +773,7 @@ nav li:last-child {
 /**************************************** Map ****************************************/
 
 iframe {
-  padding: 16px;
+  padding: 12px;
   width: 100%;
   height: 550px;
   background-color: white;
