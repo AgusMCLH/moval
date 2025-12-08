@@ -162,7 +162,8 @@ section {
   border-radius: 8px;
   font-size: 16px;
   padding: 12px 24px;
-  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3),
+    0px 1px 3px 1px rgba(0, 0, 0, 0.15);
   border: none;
   text-decoration: none;
   cursor: pointer;
@@ -170,12 +171,14 @@ section {
 }
 .btnSecondary:hover {
   transform: translateY(-2px);
-  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3),
+    0px 2px 6px 2px rgba(0, 0, 0, 0.15);
 }
 
 nav {
   background-color: #407135;
-  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3),
+    0px 1px 3px 1px rgba(0, 0, 0, 0.15);
 }
 nav ul {
   box-sizing: border-box;
@@ -219,7 +222,8 @@ nav li:last-child {
   width: 250px;
   z-index: 999;
   background-color: #407135;
-  box-shadow: 0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 8px 12px 6px rgba(0, 0, 0, 0.15),
+    0px 4px 4px 0px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -264,7 +268,11 @@ nav li:last-child {
   justify-content: center;
   width: 100%;
   height: 750px;
-  background-image: linear-gradient(rgba(61, 105, 53, 0.5), rgba(61, 105, 53, 0.5)), url("/Assets/MovalHero.webp");
+  background-image: linear-gradient(
+      rgba(61, 105, 53, 0.5),
+      rgba(61, 105, 53, 0.5)
+    ),
+    url("/Assets/MovalHero.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -303,7 +311,8 @@ nav li:last-child {
   justify-content: center;
   gap: 16px;
 }
-.heroSubtitleContainer::before, .heroSubtitleContainer::after {
+.heroSubtitleContainer::before,
+.heroSubtitleContainer::after {
   content: "";
   display: block;
   height: 4px;
@@ -355,7 +364,8 @@ nav li:last-child {
   height: 700px;
   padding: 16px;
   background-color: #fff;
-  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3),
+    0px 1px 3px 1px rgba(0, 0, 0, 0.15);
   border-radius: 12px;
   transform: rotate(-1.3deg);
   overflow: hidden;
@@ -367,7 +377,7 @@ nav li:last-child {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
 }
 
@@ -403,7 +413,8 @@ nav li:last-child {
   padding: clamp(10px, 2rem, 144541px);
   flex: 1 1 1;
   max-width: 220px;
-  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3),
+    0px 1px 3px 1px rgba(0, 0, 0, 0.15);
   min-width: 0;
   transition: 200ms;
 }
@@ -432,7 +443,8 @@ nav li:last-child {
 }
 .postIt1:hover {
   transform: rotate(6deg);
-  box-shadow: 0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 6px 10px 4px rgba(0, 0, 0, 0.15),
+    0px 2px 3px 0px rgba(0, 0, 0, 0.3);
 }
 
 .postIt2 {
@@ -441,7 +453,8 @@ nav li:last-child {
 }
 .postIt2:hover {
   transform: rotate(6deg);
-  box-shadow: 0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 6px 10px 4px rgba(0, 0, 0, 0.15),
+    0px 2px 3px 0px rgba(0, 0, 0, 0.3);
 }
 
 .postIt3 {
@@ -450,7 +463,8 @@ nav li:last-child {
 }
 .postIt3:hover {
   transform: rotate(-4.2deg);
-  box-shadow: 0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 6px 10px 4px rgba(0, 0, 0, 0.15),
+    0px 2px 3px 0px rgba(0, 0, 0, 0.3);
 }
 
 .padreLucasContent {
@@ -465,9 +479,10 @@ nav li:last-child {
   flex: 2 1 0;
   max-width: 100%;
   border-radius: 12px;
-  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3),
+    0px 2px 6px 2px rgba(0, 0, 0, 0.15);
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 100%;
   height: 100%;
 }
@@ -476,7 +491,7 @@ nav li:last-child {
   height: 100%;
   border-radius: 8px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .padreLucasTextContainer {
@@ -498,7 +513,8 @@ nav li:last-child {
 .ourTeamCard {
   background-color: #fff;
   border-radius: 12px;
-  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3),
+    0px 1px 3px 1px rgba(0, 0, 0, 0.15);
   padding: 24px;
   display: flex;
   flex-direction: column;
@@ -535,7 +551,8 @@ nav li:last-child {
 .activityCard {
   background-color: #fff;
   border-radius: 12px;
-  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3),
+    0px 1px 3px 1px rgba(0, 0, 0, 0.15);
   padding: 24px;
   display: flex;
   flex-direction: column;
@@ -564,10 +581,12 @@ nav li:last-child {
   filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.2));
   transition: transform 0.15s ease, filter 0.15s ease;
 }
+
 #WhatsappButton:hover {
   transform: translateY(-3px);
   filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.25));
 }
+
 #WhatsappButton:active {
   transform: translateY(1px);
 }
@@ -579,7 +598,8 @@ iframe {
   height: 550px;
   background-color: #fff;
   border-radius: 24px;
-  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3),
+    0px 2px 6px 2px rgba(0, 0, 0, 0.15);
 }
 
 .checkListSectionContent {
@@ -605,9 +625,9 @@ iframe {
   font-weight: 300;
   font-size: 20px;
 }
-.checkItem input[type=checkbox] {
+.checkItem input[type="checkbox"] {
   -moz-appearance: none;
-       appearance: none;
+  appearance: none;
   -webkit-appearance: none;
   width: 24px;
   height: 24px;
@@ -618,7 +638,7 @@ iframe {
   cursor: pointer;
   transform: rotate(var(--rot));
 }
-.checkItem input[type=checkbox]::after {
+.checkItem input[type="checkbox"]::after {
   content: "";
   display: block;
   width: 12px;
@@ -629,26 +649,26 @@ iframe {
   transform-origin: center;
   transition: transform 0.1s ease;
 }
-.checkItem input[type=checkbox]:checked::after {
+.checkItem input[type="checkbox"]:checked::after {
   transform: rotate(-45deg) scale(1);
 }
-.checkItem input[type=checkbox]:checked + span {
+.checkItem input[type="checkbox"]:checked + span {
   text-decoration: line-through;
   opacity: 0.65;
 }
-.checkItem:nth-child(5n+1) {
+.checkItem:nth-child(5n + 1) {
   --rot: -4deg;
 }
-.checkItem:nth-child(5n+2) {
+.checkItem:nth-child(5n + 2) {
   --rot: -2deg;
 }
-.checkItem:nth-child(5n+3) {
+.checkItem:nth-child(5n + 3) {
   --rot: 0deg;
 }
-.checkItem:nth-child(5n+4) {
+.checkItem:nth-child(5n + 4) {
   --rot: 2deg;
 }
-.checkItem:nth-child(5n+5) {
+.checkItem:nth-child(5n + 5) {
   --rot: 4deg;
 }
 
@@ -732,7 +752,8 @@ iframe {
   gap: 60px;
   flex-direction: column;
   background-color: #fff;
-  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3),
+    0px 2px 6px 2px rgba(0, 0, 0, 0.15);
 }
 
 .itemsListContainer {
@@ -770,7 +791,8 @@ iframe {
 .formLine select {
   padding: 16px 24px;
   flex: 1;
-  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3),
+    0px 1px 3px 1px rgba(0, 0, 0, 0.15);
   border: none;
   font-family: "Poppins", sans-serif;
 }
@@ -813,7 +835,7 @@ iframe {
   gap: 10px;
   cursor: pointer;
 }
-.healthCheck input[type=checkbox] {
+.healthCheck input[type="checkbox"] {
   width: 18px;
   height: 18px;
   accent-color: #111;
@@ -830,7 +852,8 @@ iframe {
   width: 100%;
   overflow-x: auto;
   border-radius: 16px;
-  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3),
+    0px 1px 3px 1px rgba(0, 0, 0, 0.15);
   background: #fff;
 }
 
@@ -891,7 +914,6 @@ iframe {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  max-width: 1420px;
   margin: 40px;
 }
 .finalFormPart .flex {
@@ -904,4 +926,391 @@ iframe {
   min-width: 400px;
   width: 40%;
   max-width: 600px;
-}/*# sourceMappingURL=moval_sass.css.map */
+} /*# sourceMappingURL=moval_sass.css.map */
+
+.primeraVez {
+  background-color: rgb(255, 226, 164);
+  border: solid 2px rgb(255, 166, 0);
+  gap: 1.5rem;
+}
+
+/* ========================================
+   RESPONSIVE MOBILE STYLES - Agregá esto al final de tu CSS
+   ======================================== */
+
+/* Tablets y móviles grandes (hasta 968px) */
+@media (max-width: 968px) {
+  .sectionContentContainer {
+    padding: 0 20px;
+    gap: 40px;
+  }
+
+  .sectionCardStyleContainer {
+    padding: 30px 40px;
+    gap: 40px;
+  }
+
+  .itemsListContainer {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .formLine {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .formLine p {
+    flex: none;
+    width: 100%;
+    text-align: left;
+  }
+
+  .formLine input,
+  .formLine select {
+    width: 100%;
+  }
+}
+
+/* Móviles medianos (hasta 768px) */
+@media (max-width: 768px) {
+  .typ-subtitle-1 {
+    font-size: 20px;
+  }
+
+  .typ-subtitle-2 {
+    font-size: 18px;
+  }
+
+  .typ-lead {
+    font-size: 16px;
+  }
+
+  .typ-body {
+    font-size: 15px;
+  }
+
+  .sectionCardStyleContainer {
+    padding: 24px 20px;
+    gap: 32px;
+  }
+
+  .listaDeCosasALlevar,
+  .fichaDelAcampante {
+    padding: 0 20px;
+  }
+
+  section {
+    margin-bottom: 80px;
+  }
+
+  .primeraVez {
+    padding: 20px;
+  }
+
+  .costo {
+    padding: 24px 0;
+  }
+
+  /* Tabla responsive */
+  .formTableWrap {
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .formTable {
+    min-width: 480px;
+  }
+
+  .formTable thead th,
+  .formTable td {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .tableInput {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  /* Checkboxes de salud */
+  .healthCheckboxGrid {
+    gap: 8px 12px;
+  }
+
+  .healthCheck span {
+    font-size: 15px;
+  }
+
+  /* Parte final del formulario */
+  .finalFormPart {
+    margin: 32px 20px;
+    gap: 20px;
+  }
+
+  .finalFormPart .flex {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .finalFormPart .flex p {
+    min-width: unset;
+    width: 100%;
+    max-width: unset;
+    font-size: 14px;
+  }
+
+  .finalFormPart .flex input[type="checkbox"] {
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .btnPrimary {
+    width: 100%;
+    max-width: 100%;
+    font-size: 18px;
+    padding: 14px 24px;
+  }
+}
+
+/* Móviles pequeños (hasta 520px) */
+@media (max-width: 520px) {
+  .typ-subtitle-1 {
+    font-size: 18px;
+  }
+
+  .typ-subtitle-2 {
+    font-size: 16px;
+  }
+
+  .typ-lead {
+    font-size: 15px;
+  }
+
+  .typ-body {
+    font-size: 14px;
+  }
+
+  .typ-small {
+    font-size: 13px;
+  }
+
+  .sectionContentContainer {
+    padding: 0 16px;
+    gap: 32px;
+  }
+
+  .sectionCardStyleContainer {
+    padding: 20px 16px;
+    gap: 28px;
+    border-radius: 8px;
+  }
+
+  .listaDeCosasALlevar,
+  .fichaDelAcampante {
+    padding: 0 12px;
+  }
+
+  section {
+    margin-bottom: 60px;
+  }
+
+  /* Lista de items */
+  .itemsList ul,
+  .importantContainer ul {
+    padding-left: 20px;
+  }
+
+  .itemsList ul li,
+  .importantContainer ul li {
+    margin-bottom: 8px;
+  }
+
+  /* Formulario */
+  .formLine input,
+  .formLine select {
+    padding: 14px 18px;
+    font-size: 15px;
+    border-radius: 8px;
+  }
+
+  .formLine p {
+    font-size: 14px;
+  }
+
+  /* Tabla más compacta */
+  .formTable {
+    min-width: 400px;
+  }
+
+  .formTable thead th,
+  .formTable td {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  .tableInput {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  /* Fieldset de salud */
+  .healthFieldset legend {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .healthCheck {
+    gap: 8px;
+  }
+
+  .healthCheck span {
+    font-size: 14px;
+  }
+
+  .healthCheck input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* Costo */
+  .costo {
+    padding: 20px 0;
+    gap: 10px;
+  }
+
+  /* Parte final */
+  .finalFormPart {
+    margin: 24px 12px;
+    gap: 16px;
+  }
+
+  .finalFormPart .flex p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .btnPrimary {
+    font-size: 16px;
+    padding: 12px 20px;
+  }
+
+  /* Advertencia primera vez */
+  .primeraVez {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .primeraVez h1 {
+    font-size: 16px;
+  }
+
+  .primeraVez p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+}
+
+/* Móviles muy pequeños (hasta 380px) */
+@media (max-width: 380px) {
+  .sectionCardStyleContainer {
+    padding: 16px 12px;
+  }
+
+  .formLine input,
+  .formLine select {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+
+  .btnPrimary {
+    font-size: 15px;
+    padding: 10px 16px;
+  }
+
+  .formTable {
+    min-width: 340px;
+  }
+
+  .healthCheckboxGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .finalFormPart .flex {
+    gap: 10px;
+  }
+
+  .finalFormPart .flex input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Mejoras de UX para touch */
+@media (max-width: 768px) {
+  /* Inputs más grandes para mejor toque */
+  input[type="text"],
+  input[type="number"],
+  select,
+  .tableInput {
+    min-height: 44px; /* Tamaño mínimo recomendado por Apple para touch targets */
+  }
+
+  /* Checkboxes más grandes */
+  input[type="checkbox"] {
+    min-width: 20px;
+    min-height: 20px;
+  }
+
+  /* Botones más accesibles */
+  .btnPrimary,
+  .btnSecondary {
+    min-height: 44px;
+    touch-action: manipulation; /* Previene zoom en doble tap */
+  }
+
+  /* Mejor scroll en tablas */
+  .formTableWrap {
+    position: relative;
+  }
+
+  .formTableWrap::after {
+    content: "→ Deslizá";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    pointer-events: none;
+    opacity: 0.8;
+  }
+
+  .formTableWrap::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .formTableWrap::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+}
+
+/* Landscape en móviles */
+@media (max-height: 500px) and (orientation: landscape) {
+  .sectionCardStyleContainer {
+    padding: 20px;
+  }
+
+  section {
+    margin-bottom: 40px;
+  }
+
+  .finalFormPart {
+    margin: 20px;
+  }
+}

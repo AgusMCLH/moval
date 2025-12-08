@@ -8,11 +8,16 @@ $white: #fff;
 $bg-light: #f1f1f1;
 
 // Shadows
-$shadow-m1: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-$shadow-m2: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
-$shadow-m3: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px 0px rgba(0, 0, 0, 0.3);
-$shadow-m4: 0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.3);
-$shadow-m5: 0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px 0px rgba(0, 0, 0, 0.3);
+$shadow-m1: 0px 1px 2px 0px rgba(0, 0, 0, 0.3),
+  0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+$shadow-m2: 0px 1px 2px 0px rgba(0, 0, 0, 0.3),
+  0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+$shadow-m3: 0px 4px 8px 3px rgba(0, 0, 0, 0.15),
+  0px 1px 3px 0px rgba(0, 0, 0, 0.3);
+$shadow-m4: 0px 6px 10px 4px rgba(0, 0, 0, 0.15),
+  0px 2px 3px 0px rgba(0, 0, 0, 0.3);
+$shadow-m5: 0px 8px 12px 6px rgba(0, 0, 0, 0.15),
+  0px 4px 4px 0px rgba(0, 0, 0, 0.3);
 
 // Fonts
 $ff-display: "Londrina Solid", sans-serif;
@@ -118,16 +123,36 @@ body {
   text-shadow: 0px 5px 0px $grey-300;
 }
 
-.typ-h1 { @include typography($ff-display, $fs-h1, $lh-heading); }
-.typ-h2 { @include typography($ff-display, $fs-h2, $lh-heading); }
-.typ-h3 { @include typography($ff-display, $fs-h3, $lh-heading); }
-.typ-h4 { @include typography($ff-display, $fs-h4, $lh-heading); }
-.typ-subtitle-1 { @include typography($ff-body, $fs-subtitle-1, $lh-subtitle); }
-.typ-subtitle-2 { @include typography($ff-body, $fs-subtitle-2, $lh-subtitle); }
-.typ-lead { @include typography($ff-body, $fs-lead, $lh-subtitle, 400); }
-.typ-body { @include typography($ff-body, $fs-body, $lh-body, 400); }
-.typ-small { @include typography($ff-body, $fs-small, $lh-body, 400); }
-.typ-tiny { @include typography($ff-body, $fs-tiny, $lh-body, 400); }
+.typ-h1 {
+  @include typography($ff-display, $fs-h1, $lh-heading);
+}
+.typ-h2 {
+  @include typography($ff-display, $fs-h2, $lh-heading);
+}
+.typ-h3 {
+  @include typography($ff-display, $fs-h3, $lh-heading);
+}
+.typ-h4 {
+  @include typography($ff-display, $fs-h4, $lh-heading);
+}
+.typ-subtitle-1 {
+  @include typography($ff-body, $fs-subtitle-1, $lh-subtitle);
+}
+.typ-subtitle-2 {
+  @include typography($ff-body, $fs-subtitle-2, $lh-subtitle);
+}
+.typ-lead {
+  @include typography($ff-body, $fs-lead, $lh-subtitle, 400);
+}
+.typ-body {
+  @include typography($ff-body, $fs-body, $lh-body, 400);
+}
+.typ-small {
+  @include typography($ff-body, $fs-small, $lh-body, 400);
+}
+.typ-tiny {
+  @include typography($ff-body, $fs-tiny, $lh-body, 400);
+}
 
 // ========================================
 // Layout Components
@@ -232,8 +257,12 @@ nav {
   }
 
   li {
-    &:first-child { margin-right: auto; }
-    &:last-child { margin-left: auto; }
+    &:first-child {
+      margin-right: auto;
+    }
+    &:last-child {
+      margin-left: auto;
+    }
   }
 }
 
@@ -262,7 +291,9 @@ nav {
     text-align: left;
     width: 100%;
 
-    &:last-child { display: none; }
+    &:last-child {
+      display: none;
+    }
   }
 
   a {
@@ -278,12 +309,18 @@ nav {
 }
 
 @include responsive($breakpoint-desktop) {
-  .hideOnMobile { display: none; }
-  .menu-button { display: block; }
+  .hideOnMobile {
+    display: none;
+  }
+  .menu-button {
+    display: block;
+  }
 }
 
 @include responsive($breakpoint-mobile) {
-  .sidebar { width: 100%; }
+  .sidebar {
+    width: 100%;
+  }
 }
 
 // ========================================
@@ -293,7 +330,10 @@ nav {
   @include flex-center;
   width: 100%;
   height: 750px;
-  background-image: linear-gradient(rgba(61, 105, 53, 0.5), rgba(61, 105, 53, 0.5)),
+  background-image: linear-gradient(
+      rgba(61, 105, 53, 0.5),
+      rgba(61, 105, 53, 0.5)
+    ),
     url("/Assets/MovalHero.webp");
   background-position: center;
   background-repeat: no-repeat;
@@ -445,16 +485,22 @@ nav {
 @mixin postit-color($color, $rotate, $hover-rotate) {
   background-color: $color;
   transform: rotate($rotate);
-  
+
   &:hover {
     transform: rotate($hover-rotate);
     box-shadow: $shadow-m4;
   }
 }
 
-.postIt1 { @include postit-color(#87cddc, -2.5deg, 6deg); }
-.postIt2 { @include postit-color(#eee8a2, -1.8deg, 6deg); }
-.postIt3 { @include postit-color(#e0b4e8, 2.2deg, -4.2deg); }
+.postIt1 {
+  @include postit-color(#87cddc, -2.5deg, 6deg);
+}
+.postIt2 {
+  @include postit-color(#eee8a2, -1.8deg, 6deg);
+}
+.postIt3 {
+  @include postit-color(#e0b4e8, 2.2deg, -4.2deg);
+}
 
 // ========================================
 // Padre Lucas Section
@@ -694,7 +740,6 @@ iframe {
   height: fit-content;
   @include flex-center;
   @include flex-column;
-
 }
 
 .footerTextContainer {
@@ -706,8 +751,10 @@ iframe {
 }
 
 .sunrise {
-  background-image: linear-gradient(rgba(241, 241, 241, 1), rgba(255, 205, 161, 1));
-
+  background-image: linear-gradient(
+    rgba(241, 241, 241, 1),
+    rgba(255, 205, 161, 1)
+  );
 }
 
 // ========================================
@@ -716,6 +763,7 @@ iframe {
 #formBody {
   @include flex-column(64px);
 }
+
 
 .listaDeCosasALlevar,
 .fichaDelAcampante {
@@ -878,12 +926,11 @@ iframe {
   opacity: 0.65;
 }
 
-
-.variableInputContainer{
+.variableInputContainer {
   display: none;
 }
 
-.finalFormPart{
+.finalFormPart {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -892,12 +939,12 @@ iframe {
   @include flex-column(24px);
   max-width: 1420px;
   margin: 40px;
-  .flex{
+  .flex {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 12px;
-    p{
+    p {
       min-width: 400px;
       width: 40%;
       max-width: 600px;
