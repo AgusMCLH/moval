@@ -431,11 +431,18 @@ nav li:last-child {
   background-color: #fff;
   box-shadow: var(--shadow-m1);
   border-radius: 12px;
-  transform: rotate(-1.3deg);
+  transform: rotate(1.3deg);
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: 900px) {
+  .imageCard {
+    padding: 0;
+    transform: rotate(0deg);
+  }
 }
 
 .imageCard img {
