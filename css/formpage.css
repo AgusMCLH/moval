@@ -735,6 +735,22 @@ iframe {
   gap: 64px;
 }
 
+@media (max-width: 1440px) {
+  #formBody {
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+  }
+}
+
+@media (max-width: 900px) {
+  #formBody {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
 .listaDeCosasALlevar,
 .fichaDelAcampante {
   box-sizing: border-box;
@@ -788,8 +804,10 @@ iframe {
   width: 100%;
   gap: 20px;
 }
+
 .formLine input,
 .formLine select {
+  border-radius: 4px;
   padding: 16px 24px;
   flex: 1;
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3),
@@ -797,6 +815,7 @@ iframe {
   border: none;
   font-family: "Poppins", sans-serif;
 }
+
 .formLine p {
   margin: auto;
   height: -moz-fit-content;
@@ -940,16 +959,10 @@ iframe {
    RESPONSIVE MOBILE STYLES - Agregá esto al final de tu CSS
    ======================================== */
 
-/* Tablets y móviles grandes (hasta 968px) */
 @media (max-width: 968px) {
-  .sectionContentContainer {
-    padding: 0 20px;
-    gap: 40px;
-  }
-
   .sectionCardStyleContainer {
     padding: 30px 40px;
-    gap: 40px;
+    gap: 30px;
   }
 
   .itemsListContainer {
@@ -966,10 +979,6 @@ iframe {
     flex: none;
     width: 100%;
     text-align: left;
-  }
-
-  .formLine input,
-  .formLine select {
   }
 }
 
@@ -1075,7 +1084,6 @@ iframe {
   }
 }
 
-/* Móviles pequeños (hasta 520px) */
 @media (max-width: 520px) {
   .typ-subtitle-1 {
     font-size: 18px;
@@ -1126,18 +1134,6 @@ iframe {
   .itemsList ul li,
   .importantContainer ul li {
     margin-bottom: 8px;
-  }
-
-  /* Formulario */
-  .formLine input,
-  .formLine select {
-    padding: 14px 18px;
-    font-size: 15px;
-    border-radius: 8px;
-  }
-
-  .formLine p {
-    font-size: 14px;
   }
 
   /* Tabla más compacta */
@@ -1213,50 +1209,9 @@ iframe {
   }
 }
 
-/* Móviles muy pequeños (hasta 380px) */
-@media (max-width: 380px) {
-  .sectionCardStyleContainer {
-    padding: 16px 12px;
-  }
-
-  .formLine input,
-  .formLine select {
-    padding: 12px 16px;
-    font-size: 14px;
-  }
-
-  .btnPrimary {
-    font-size: 15px;
-    padding: 10px 16px;
-  }
-
-  .formTable {
-    min-width: 340px;
-  }
-
-  .healthCheckboxGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .finalFormPart .flex {
-    gap: 10px;
-  }
-
-  .finalFormPart .flex input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
-  }
-}
-
 /* Mejoras de UX para touch */
 @media (max-width: 768px) {
   /* Inputs más grandes para mejor toque */
-  input[type="text"],
-  input[type="number"],
-  select,
-  .tableInput {
-    min-height: 44px; /* Tamaño mínimo recomendado por Apple para touch targets */
-  }
 
   /* Checkboxes más grandes */
   input[type="checkbox"] {
