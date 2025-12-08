@@ -148,6 +148,11 @@ section {
   justify-content: center;
 }
 
+@media (max-width: 900px) {
+  section {
+    margin-bottom: 80px;
+  }
+}
 .sectionTitleContainer {
   display: flex;
   flex-direction: column;
@@ -233,11 +238,16 @@ nav {
   box-shadow: var(--shadow-m1);
 }
 nav ul {
-  padding: 6px 40px;
+  padding: 6px 40px 6px 37px;
   margin: auto;
   max-width: 1500px;
   display: flex;
   list-style: none;
+}
+@media (max-width: 900px) {
+  nav ul {
+    padding: 6px 0px 6px 24px;
+  }
 }
 nav a {
   height: 100%;
@@ -622,8 +632,8 @@ nav li:last-child {
 
 /* Mejor usar background-color acá */
 .ourTeamCard {
-  background-color: #fff; /* o var(--primary-color) si querés fondo verde */
-  padding: 16px;
+  background-color: #fff;
+  padding: 12px;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -853,8 +863,16 @@ iframe {
 }
 
 .checkListPhotos {
+  box-sizing: border-box;
   flex: 2 1 0;
   background-color: rgba(0, 0, 0, 0.1);
+  background-image: url(/Assets/Checklist.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  transform: rotate(1.3deg);
+  box-shadow: var(--shadow-m2);
 }
 
 @media (max-width: 900px) {
@@ -1002,13 +1020,23 @@ iframe {
   flex-direction: column;
 }
 .footerTextContainer {
-  transform: translateY(8rem);
   display: flex;
   flex-direction: column;
   gap: 32px;
   text-align: center;
   align-items: center;
   max-width: 75%;
+}
+
+@media (max-width: 900px) {
+  .footerTextContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    align-items: center;
+    max-width: 75%;
+  }
 }
 
 .sunrise {
