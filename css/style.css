@@ -250,6 +250,7 @@ nav a {
 }
 
 nav a:hover {
+  color: white;
   background-color: var(--primary-color-hover);
 }
 
@@ -432,7 +433,11 @@ nav li:last-child {
   height: 100%;
   object-fit: cover;
   display: block;
+  background-color: 2;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
 /* Contenedor derecho (tu bloque rojo) */
 .divAboutRight {
   display: flex;
@@ -535,18 +540,16 @@ nav li:last-child {
   display: flex;
   gap: 40px;
   width: 100%;
-  align-items: stretch;
 }
 
 .padreLucasImg {
-  padding: 16px;
+  padding: 12px;
   flex: 2 1 0;
   max-width: 100%;
+  background-color: rgb(255, 255, 255);
   border-radius: 12px;
   box-shadow: var(--shadow-m2);
   object-fit: cover;
-  width: 100%;
-  height: 100%;
 }
 
 .padreLucasImg img {
@@ -563,7 +566,13 @@ nav li:last-child {
   justify-content: center;
   text-align: left;
   align-items: flex-start;
-  gap: 24px;
+  gap: 12px;
+  max-width: 420px;
+}
+
+.padreLucasTextContainer button {
+  margin-top: 20px;
+  border: none;
 }
 
 @media (max-width: 900px) {
@@ -571,24 +580,35 @@ nav li:last-child {
     width: 100%;
     height: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
+    gap: 12px;
   }
 
   .padreLucasTextContainer {
     flex: 1 1 0;
     display: flex;
     flex-direction: column;
+    text-align: center;
     justify-content: center;
-    text-align: left;
     align-items: flex-start;
     gap: 12px;
+    max-width: 900px;
+  }
+
+  .padreLucasTextContainer button,
+  .padreLucasTextContainer div {
+    width: 100%;
+    text-align: center;
+    align-items: center;
   }
 }
 
 /**************************************** Our Team ****************************************/
-
+.ourTeamSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .ourTeamCards {
   width: 100%;
   display: flex;
@@ -597,19 +617,19 @@ nav li:last-child {
 
 @media (max-width: 900px) {
   .ourTeamCards {
-    width: 100%;
+    width: 65%;
     display: flex;
     gap: 20px;
     flex-direction: column;
   }
 }
 .ourTeamCard {
-  padding: 2vw;
+  background-image: var(--primary-color);
+  padding: 16px;
   display: flex;
   flex-direction: column;
   text-align: center;
   width: 100%;
-  background-color: rgb(255, 255, 255);
   border-radius: 12px;
   box-shadow: var(--shadow-m1);
   gap: 24px;
@@ -1241,5 +1261,3 @@ main {
     min-width: 0;
   }
 }
-
-/* registro */
