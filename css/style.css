@@ -439,6 +439,10 @@ nav li:last-child {
 }
 
 @media (max-width: 900px) {
+  .heroImage {
+    height: 600px;
+    margin-bottom: 0;
+  }
   .imageCard {
     padding: 0;
     transform: rotate(0deg);
