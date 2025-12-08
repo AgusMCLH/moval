@@ -604,27 +604,22 @@ nav li:last-child {
 }
 
 /**************************************** Our Team ****************************************/
+/**************************************** Our Team ****************************************/
 .ourTeamSection {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .ourTeamCards {
   width: 100%;
   display: flex;
   gap: 40px;
 }
 
-@media (max-width: 900px) {
-  .ourTeamCards {
-    width: 65%;
-    display: flex;
-    gap: 20px;
-    flex-direction: column;
-  }
-}
+/* Mejor usar background-color acá */
 .ourTeamCard {
-  background-image: var(--primary-color);
+  background-color: #fff; /* o var(--primary-color) si querés fondo verde */
   padding: 16px;
   display: flex;
   flex-direction: column;
@@ -635,19 +630,33 @@ nav li:last-child {
   gap: 24px;
 }
 
+/* Contenedor de imagen consistente */
+.ourTeamCard img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  height: auto; /* se calcula por aspect-ratio */
+  object-fit: cover; /* clave: recorta sin deformar */
+  object-position: center; /* centra el recorte */
+  border-radius: 8px;
+  display: block; /* evita espacios raros inline */
+  background-color: rgb(194, 194, 194);
+}
+
 .ourTeamCardTextContainer {
   display: flex;
   flex-direction: column;
   text-align: center;
   gap: 12px;
 }
-.ourTeamCard img {
-  border-radius: 8px;
-  aspect-ratio: 4/3;
-  width: 100%;
-  background-color: rgb(194, 194, 194);
-}
 
+/* Mobile */
+@media (max-width: 900px) {
+  .ourTeamCards {
+    width: 100%;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
 /**************************************** Activities ****************************************/
 
 .activitiesSection {
