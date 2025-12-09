@@ -139,7 +139,6 @@ section {
   text-align: center;
   z-index: 1;
 }
-
 .btnPrimary:hover {
   cursor: pointer;
   background-color: #d3d3d3;
@@ -584,23 +583,17 @@ nav li:last-child {
   gap: 12px;
 }
 
-#WhatsappButton {
-  position: fixed;
-  right: 10%;
-  bottom: 10%;
-  z-index: 9999;
-  cursor: pointer;
-  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.2));
-  transition: transform 0.15s ease, filter 0.15s ease;
+/* Ocultar flechitas de los inputs */
+/* Chrome, Edge, Safari */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
-
-#WhatsappButton:hover {
-  transform: translateY(-3px);
-  filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.25));
-}
-
-#WhatsappButton:active {
-  transform: translateY(1px);
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 iframe {
