@@ -623,7 +623,7 @@ nav li:last-child {
 /* Mejor usar background-color acá */
 .ourTeamCard {
   background-color: #fff;
-  padding: 12px;
+  padding: 24px 24px;
   display: flex;
   flex-direction: column;
   text-align: center;
