@@ -933,6 +933,7 @@ iframe {
   transition: max-height 0.4s ease;
   opacity: 0;
   transition: max-height 0.4s ease, opacity 0.3s ease;
+  padding: 0 16px 16px 16px;
 }
 
 .Faq.active .FaqAnswer {
