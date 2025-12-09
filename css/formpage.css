@@ -812,6 +812,12 @@ iframe {
   gap: 12px;
 }
 
+.importantContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 .costo {
   display: flex;
   flex-direction: column;
@@ -1151,6 +1157,12 @@ iframe {
   section {
     margin-bottom: 60px;
   }
+  /* 
+  .importantContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  } */
 
   /* Lista de items */
   .itemsList ul,
