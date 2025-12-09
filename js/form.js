@@ -1,99 +1,99 @@
 const renderIllness = (e) => {
   const render =
-    document.getElementById('illnessChkInput').value === 'true' ? true : false;
+    document.getElementById("illnessChkInput").value === "true" ? true : false;
   if (render) {
-    document.getElementById('illnessInputContainer').style.display = 'flex';
+    document.getElementById("illnessInputContainer").style.display = "flex";
   } else {
-    document.getElementById('illnessInputContainer').style.display = 'none';
+    document.getElementById("illnessInputContainer").style.display = "none";
   }
   console.log(render);
 };
 
 const renderTreatment = (e) => {
   const render =
-    document.getElementById('treatmentChkInput').value === 'si' ? true : false;
+    document.getElementById("treatmentChkInput").value === "si" ? true : false;
   if (render) {
-    document.getElementById('treatmentInputContainer').style.display = 'flex';
+    document.getElementById("treatmentInputContainer").style.display = "flex";
   } else {
-    document.getElementById('treatmentInputContainer').style.display = 'none';
+    document.getElementById("treatmentInputContainer").style.display = "none";
   }
 };
 const renderContraindicated = (e) => {
   const render =
-    document.getElementById('contraindicatedChkInput').value === 'si'
+    document.getElementById("contraindicatedChkInput").value === "si"
       ? true
       : false;
   if (render) {
-    document.getElementById('contraindicatedInputContainer').style.display =
-      'flex';
+    document.getElementById("contraindicatedInputContainer").style.display =
+      "flex";
   } else {
-    document.getElementById('contraindicatedInputContainer').style.display =
-      'none';
+    document.getElementById("contraindicatedInputContainer").style.display =
+      "none";
   }
 };
 
-const submitFormBtn = document.getElementById('submitFormBtn');
+const submitFormBtn = document.getElementById("submitFormBtn");
 
-const authorizationChkInput = document.getElementById('authorizationChkInput');
+const authorizationChkInput = document.getElementById("authorizationChkInput");
 
 const sendFormData = async () => {
-  const name = document.getElementById('nameInput').value.trim();
-  const age = document.getElementById('ageInput').value;
-  const dni = document.getElementById('ciInput').value;
-  const tel = document.getElementById('telInput').value;
-  const parentCell = document.getElementById('parentCelInput').value;
-  const addressInput = document.getElementById('addressInput').value.trim();
-  const hospital = document.getElementById('hospitalInput').value.trim();
+  const name = document.getElementById("nameInput").value.trim();
+  const age = document.getElementById("ageInput").value;
+  const dni = document.getElementById("ciInput").value;
+  const tel = document.getElementById("telInput").value;
+  const parentCell = document.getElementById("parentCelInput").value;
+  const addressInput = document.getElementById("addressInput").value.trim();
+  const hospital = document.getElementById("hospitalInput").value.trim();
   const medicalEmergency = document
-    .getElementById('medicalEmergencyInput')
+    .getElementById("medicalEmergencyInput")
     .value.trim();
-  const illness = document.getElementById('illnessInput').value.trim();
-  const treatment = document.getElementById('treatmentInput').value.trim();
+  const illness = document.getElementById("illnessInput").value.trim();
+  const treatment = document.getElementById("treatmentInput").value.trim();
   const contraindicated = document
-    .getElementById('contraindicatedInput')
+    .getElementById("contraindicatedInput")
     .value.trim();
   const serialNumber = document
-    .getElementById('serialNumberInput')
+    .getElementById("serialNumberInput")
     .value.trim();
-  const suceptibleOidos = document.getElementById('suceptibleOidos').checked;
+  const suceptibleOidos = document.getElementById("suceptibleOidos").checked;
   const suceptibleGarganta =
-    document.getElementById('suceptibleGarganta').checked;
+    document.getElementById("suceptibleGarganta").checked;
   const suceptibleBronquitis = document.getElementById(
-    'suceptibleBronquitis'
+    "suceptibleBronquitis"
   ).checked;
-  const suceptibleAsma = document.getElementById('suceptibleAsma').checked;
+  const suceptibleAsma = document.getElementById("suceptibleAsma").checked;
   const suceptibleDolorCabeza = document.getElementById(
-    'suceptibleDolorCabeza'
+    "suceptibleDolorCabeza"
   ).checked;
-  const suceptibleMareos = document.getElementById('suceptibleMareos').checked;
+  const suceptibleMareos = document.getElementById("suceptibleMareos").checked;
   const suceptibletrastornosDigestivos = document.getElementById(
-    'suceptibleTrastornosDigestivos'
+    "suceptibleTrastornosDigestivos"
   ).checked;
   const suceptibleResfrioTos = document.getElementById(
-    'suceptibleResfrioTos'
+    "suceptibleResfrioTos"
   ).checked;
 
-  if (!name || !age || !dni || !tel || !parentCell || !hospital) {
+  /* if (!name || !age || !dni || !tel || !parentCell || !hospital) {
     alert('Por favor, complete todos los campos obligatorios.');
     return;
-  }
+  } */
 
-  let suceptiveness = '';
-  suceptibleOidos && (suceptiveness += 'Oídos, ');
-  suceptibleGarganta && (suceptiveness += 'Garganta, ');
-  suceptibleBronquitis && (suceptiveness += 'Bronquitis, ');
-  suceptibleAsma && (suceptiveness += 'Asma, ');
-  suceptibleDolorCabeza && (suceptiveness += 'Dolor de cabeza, ');
-  suceptibleMareos && (suceptiveness += 'Mareos, ');
+  let suceptiveness = "";
+  suceptibleOidos && (suceptiveness += "Oídos, ");
+  suceptibleGarganta && (suceptiveness += "Garganta, ");
+  suceptibleBronquitis && (suceptiveness += "Bronquitis, ");
+  suceptibleAsma && (suceptiveness += "Asma, ");
+  suceptibleDolorCabeza && (suceptiveness += "Dolor de cabeza, ");
+  suceptibleMareos && (suceptiveness += "Mareos, ");
   suceptibletrastornosDigestivos &&
-    (suceptiveness += 'Trastornos digestivos, ');
-  suceptibleResfrioTos && (suceptiveness += 'Resfrío y tos, ');
+    (suceptiveness += "Trastornos digestivos, ");
+  suceptibleResfrioTos && (suceptiveness += "Resfrío y tos, ");
 
   const medicationsName = document.getElementsByClassName(
-    'tableMedicationsInputName'
+    "tableMedicationsInputName"
   );
   const medicationsDosage = document.getElementsByClassName(
-    'tableMedicationsInputDosis'
+    "tableMedicationsInputDosis"
   );
 
   let medications = [];
@@ -129,42 +129,42 @@ const sendFormData = async () => {
   console.log(JSON.stringify(data));
 
   try {
-    console.log('Enviando petición POST a https://back.moval.uy/api/campers');
-    const response = await fetch('https://back.moval.uy/api/campers', {
-      method: 'POST',
+    console.log("Enviando petición POST a https://back.moval.uy/api/campers");
+    const response = await fetch("https://back.moval.uy/api/campers", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
     });
 
     console.log(
-      'Fetch completado. Status:',
+      "Fetch completado. Status:",
       response.status,
       response.statusText
     );
 
     if (response.ok) {
       //redirigir a página de registro exitoso
-      const nombreUsuario = name.split(' ')[0];
-      window.location.href = '/registroExitoso.html?name=' + nombreUsuario;
+      const nombreUsuario = name.split(" ")[0];
+      window.location.href = "/registroExitoso.html?name=" + nombreUsuario;
       return;
     }
 
-    alert('Ficha enviada correctamente.');
+    alert("Ficha enviada correctamente.");
   } catch (error) {
     // Errores aquí suelen ser de red, DNS, TLS o CORS (cuando el navegador bloquea la petición)
-    console.error('Fetch falló:', error);
+    console.error("Fetch falló:", error);
     alert(
-      'Error de red o CORS al enviar la ficha. Abre la consola para ver detalles.'
+      "Error de red o CORS al enviar la ficha. Abre la consola para ver detalles."
     );
   }
 };
 
-submitFormBtn.addEventListener('click', (e) => {
+submitFormBtn.addEventListener("click", (e) => {
   e.preventDefault();
   if (!authorizationChkInput.checked) {
-    alert('Debe autorizar la asistencia al campamento para enviar la ficha.');
+    alert("Debe autorizar la asistencia al campamento para enviar la ficha.");
     return;
   }
   sendFormData();
