@@ -43,10 +43,14 @@
   --fs-tiny: 12px;
 
   /* Line-height */
-  --lh-display: 0.85; /* 85% */
-  --lh-heading: 1.2; /* 120% */
-  --lh-subtitle: 1.4; /* 140% */
-  --lh-body: 1.4; /* 140% */
+  --lh-display: 0.85;
+  /* 85% */
+  --lh-heading: 1.2;
+  /* 120% */
+  --lh-subtitle: 1.4;
+  /* 140% */
+  --lh-body: 1.4;
+  /* 140% */
 }
 
 /* Display y headings usan Londrina */
@@ -57,6 +61,7 @@
   text-shadow: 0px 5px 0px var(--grey-300);
   font-weight: 500;
 }
+
 .typ-h1 {
   font-family: var(--ff-display);
   font-size: var(--fs-h1);
@@ -141,6 +146,7 @@ body {
   gap: 40px;
   flex-direction: column;
 }
+
 section {
   margin-bottom: 120px;
   width: 100%;
@@ -153,6 +159,7 @@ section {
     margin-bottom: 80px;
   }
 }
+
 .sectionTitleContainer {
   display: flex;
   flex-direction: column;
@@ -217,6 +224,7 @@ nav {
   background-color: var(--primary-color);
   box-shadow: var(--shadow-m1);
 }
+
 nav ul {
   padding: 6px 40px 6px 37px;
   margin: auto;
@@ -224,11 +232,13 @@ nav ul {
   display: flex;
   list-style: none;
 }
+
 @media (max-width: 900px) {
   nav ul {
     padding: 6px 0px 6px 24px;
   }
 }
+
 nav a {
   height: 100%;
   padding: 0 30px;
@@ -247,6 +257,7 @@ nav a:hover {
 nav li:first-child {
   margin-right: auto;
 }
+
 nav li:last-child {
   margin-left: auto;
 }
@@ -256,6 +267,7 @@ nav li:last-child {
   color: white;
   font-size: 24px;
 }
+
 .sidebar {
   position: fixed;
   top: 0;
@@ -282,6 +294,7 @@ nav li:last-child {
   padding: 15px 30px;
   width: 100%;
 }
+
 .sidebar li:last-child {
   display: none;
 }
@@ -314,10 +327,8 @@ nav li:last-child {
   align-items: center;
   width: 100%;
   height: 750px;
-  background-image: linear-gradient(
-      rgba(61, 105, 53, 0.5),
-      rgba(61, 105, 53, 0.5)
-    ),
+  background-image: linear-gradient(rgba(61, 105, 53, 0.5),
+      rgba(61, 105, 53, 0.5)),
     url("/Assets/MovalHero.webp");
   background-position: center;
   background-repeat: no-repeat;
@@ -423,6 +434,7 @@ nav li:last-child {
     height: 600px;
     margin-bottom: 0;
   }
+
   .imageCard {
     padding: 0;
     transform: rotate(0deg);
@@ -499,22 +511,27 @@ nav li:last-child {
   transform: rotate(-2.5deg);
   transition: 200ms;
 }
+
 .postIt1:hover {
   transform: rotate(1.3deg);
 }
+
 .postIt2 {
   background-color: #eee8a2;
   transform: rotate(-1.8deg);
   transition: 200ms;
 }
+
 .postIt2:hover {
   transform: rotate(6deg);
 }
+
 .postIt3 {
   background-color: #e0b4e8;
   transform: rotate(2.2deg);
   transition: 200ms;
 }
+
 .postIt3:hover {
   transform: rotate(-4.2deg);
 }
@@ -524,15 +541,18 @@ nav li:last-child {
     flex: 1 1 clamp(150px, 45%, 220px);
     max-width: none;
   }
+
   .sectionAboutContent {
     display: flex;
     flex-direction: column;
     align-items: stretch;
     height: fit-content;
   }
+
   .postIt2 {
     transform: rotate(4.2deg);
   }
+
   .postIt3 {
     max-width: 230px;
   }
@@ -623,26 +643,29 @@ nav li:last-child {
 /* Mejor usar background-color acá */
 .ourTeamCard {
   background-color: #fff;
-  padding: 24px 24px;
+  padding: 12px;
   display: flex;
   flex-direction: column;
-  text-align: center;
   width: 100%;
   border-radius: 12px;
   box-shadow: var(--shadow-m1);
-  gap: 24px;
+  gap: 12px;
 }
 
 /* Contenedor de imagen consistente */
 .ourTeamCard img {
   width: 100%;
   aspect-ratio: 4 / 3;
-  height: auto; /* se calcula por aspect-ratio */
-  object-fit: cover; /* clave: recorta sin deformar */
-  object-position: center; /* centra el recorte */
+  height: auto;
+  object-fit: cover;
+  object-position: center;
   border-radius: 8px;
-  display: block; /* evita espacios raros inline */
+  display: block;
   background-color: rgb(194, 194, 194);
+}
+
+.ourTeamCardFerreria img {
+  object-position: top;
 }
 
 .ourTeamCardTextContainer {
@@ -664,6 +687,7 @@ nav li:last-child {
     gap: 12px;
   }
 }
+
 /**************************************** Activities ****************************************/
 
 .activitiesSection {
@@ -784,6 +808,7 @@ iframe {
   display: flex;
   flex-direction: column;
 }
+
 .checkItem {
   display: flex;
   align-items: center;
@@ -823,15 +848,19 @@ iframe {
 .checkItem:nth-child(5n + 1) {
   --rot: -4deg;
 }
+
 .checkItem:nth-child(5n + 2) {
   --rot: 2.5deg;
 }
+
 .checkItem:nth-child(5n + 3) {
   --rot: -1.5deg;
 }
+
 .checkItem:nth-child(5n + 4) {
   --rot: 4deg;
 }
+
 .checkItem:nth-child(5n + 5) {
   --rot: 0.8deg;
 }
@@ -857,7 +886,7 @@ iframe {
 }
 
 /* opcional: estilo cuando está marcado */
-.checkItem input:checked + span {
+.checkItem input:checked+span {
   text-decoration: line-through;
   opacity: 0.65;
 }
@@ -879,10 +908,12 @@ iframe {
   .checkListPhotos {
     display: none;
   }
+
   .checkList {
     align-items: center;
   }
 }
+
 /**************************************** FAQ ****************************************/
 .FaqContainer {
   display: flex;
@@ -1020,6 +1051,7 @@ iframe {
   max-width: 1420px;
   flex-direction: column;
 }
+
 .footerTextContainer {
   display: flex;
   flex-direction: column;
@@ -1041,10 +1073,8 @@ iframe {
 }
 
 .sunrise {
-  background-image: linear-gradient(
-    rgba(241, 241, 241, 1),
-    rgba(255, 205, 161, 1)
-  );
+  background-image: linear-gradient(rgba(241, 241, 241, 1),
+      rgba(255, 205, 161, 1));
   width: 100%;
 }
 
@@ -1086,11 +1116,14 @@ main {
     padding: 28px 28px;
   }
 }
+
 @media (max-width: 520px) {
+
   .listaDeCosasALlevar,
   .fichaDelAcampante {
     padding: 0 16px;
   }
+
   .sectionCardStyleContainer {
     padding: 22px 18px;
   }
@@ -1174,6 +1207,7 @@ main {
     align-items: stretch;
     gap: 8px;
   }
+
   .formLabel {
     flex: 1;
   }
@@ -1190,7 +1224,7 @@ main {
   gap: 18px;
 }
 
-.formSection > legend {
+.formSection>legend {
   margin-bottom: 8px;
 }
 
@@ -1279,8 +1313,8 @@ main {
   border-bottom: none;
 }
 
-.formTable thead th + th,
-.formTable td + td {
+.formTable thead th+th,
+.formTable td+td {
   border-left: 1px solid rgba(0, 0, 0, 0.06);
 }
 
