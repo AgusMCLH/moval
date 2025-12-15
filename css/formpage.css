@@ -145,6 +145,7 @@ section {
   display: flex;
   flex-direction: column;
   text-align: center;
+  padding: 0 20px;
 }
 
 #primeraVez {
@@ -336,7 +337,7 @@ nav li:first-child {
 .fichaDelAcampante {
   box-sizing: border-box;
   width: 100%;
-  padding: 0 40px;
+  padding: 0 20px;
   margin: 0;
 }
 
@@ -345,7 +346,7 @@ nav li:first-child {
   width: 100%;
   height: 100%;
   display: flex;
-  padding: 40px 75px;
+  padding: 40px 40px;
   max-width: 1420px;
   gap: 60px;
   flex-direction: column;
@@ -617,7 +618,7 @@ nav li:first-child {
 @media (max-width: 968px) {
   /* Navbar */
   nav ul {
-    padding: 6px 20px 6px 40px;
+    padding: 6px;
   }
 
   .hideOnMobile {
@@ -692,6 +693,7 @@ nav li:first-child {
     gap: 32px;
   }
 
+  .primeraVezSection,
   .listaDeCosasALlevar,
   .fichaDelAcampante {
     padding: 0 20px;
@@ -699,10 +701,6 @@ nav li:first-child {
 
   section {
     margin-bottom: 80px;
-  }
-
-  .primeraVez {
-    padding: 20px;
   }
 
   .costo {
@@ -847,6 +845,7 @@ nav li:first-child {
     border-radius: 8px;
   }
 
+  .primeraVezSection,
   .listaDeCosasALlevar,
   .fichaDelAcampante {
     padding: 0 12px;

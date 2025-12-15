@@ -928,12 +928,6 @@ iframe {
     display: block;
   }
 
-  /* Hero y foto principal */
-  .heroImage {
-    height: 600px;
-    margin-bottom: 0;
-  }
-
   .imageCard {
     padding: 0;
     transform: rotate(0deg);
@@ -1031,7 +1025,6 @@ iframe {
   /* Contenedor general de secciones un poco más compacto */
   .sectionContentContainer {
     gap: 30px;
-    padding: 1.5rem;
   }
 }
 
@@ -1055,7 +1048,6 @@ iframe {
   /* Contenedor principal más chico */
   .sectionContentContainer {
     gap: 30px;
-    padding: 1rem;
   }
 
   /* Tipografías algo más chicas */
@@ -1107,10 +1099,6 @@ iframe {
     --fs-h2: 24px;
     --fs-lead: 14px;
     --fs-body: 13px;
-  }
-
-  .sectionContentContainer {
-    padding: 0.5rem;
   }
 
   /* Padding lateral de las secciones del form */
