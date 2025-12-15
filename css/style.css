@@ -80,7 +80,7 @@
   font-family: var(--ff-display);
   font-size: var(--fs-h3);
   line-height: var(--lh-heading);
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .typ-h4 {
