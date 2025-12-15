@@ -188,17 +188,6 @@ nav ul {
   list-style: none;
 }
 
-@media (max-width: 900px) {
-  nav ul {
-    padding: 6px 20px 6px 40px;
-  }
-}
-
-@media (max-width: 520px) {
-  nav ul {
-    padding: 6px 0px 6px 24px;
-  }
-}
 nav a {
   height: 100%;
   padding: 0 30px;
@@ -260,19 +249,6 @@ nav li:last-child {
   display: none;
 }
 
-@media (max-width: 967px) {
-  .hideOnMobile {
-    display: none;
-  }
-  .menu-button {
-    display: block;
-  }
-}
-@media (max-width: 400px) {
-  .sidebar {
-    width: 100%;
-  }
-}
 .heroImage {
   display: flex;
   align-items: center;
@@ -351,11 +327,6 @@ nav li:last-child {
   gap: 40px;
   width: 100%;
   align-items: stretch;
-}
-@media (max-width: 768px) {
-  .sectionAboutContent {
-    flex-direction: column;
-  }
 }
 
 .divAboutLeft,
@@ -440,12 +411,6 @@ nav li:last-child {
   font-weight: 500;
   font-size: clamp(11px, 0.95vw, 14px);
   opacity: 0.8;
-}
-@media (max-width: 768px) {
-  .divAboutPostit {
-    flex: 1 1 clamp(150px, 45%, 220px);
-    max-width: none;
-  }
 }
 
 .postIt1 {
@@ -739,22 +704,6 @@ iframe {
   gap: 64px;
 }
 
-@media (max-width: 1440px) {
-  #formBody {
-    display: flex;
-    flex-direction: column;
-    gap: 42px;
-  }
-}
-
-@media (max-width: 900px) {
-  #formBody {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-  }
-}
-
 .listaDeCosasALlevar,
 .fichaDelAcampante {
   box-sizing: border-box;
@@ -848,17 +797,6 @@ iframe {
   grid-template-columns: repeat(2, minmax(140px, 1fr));
   gap: 10px 18px;
 }
-@media (max-width: 520px) {
-  .healthCheckboxGrid {
-    grid-template-columns: 1fr;
-  }
-}
-@media (min-width: 1100px) {
-  .healthCheckboxGrid {
-    grid-template-columns: repeat(3, minmax(160px, 1fr));
-  }
-}
-
 .healthCheck {
   display: flex;
   align-items: center;
@@ -911,11 +849,6 @@ iframe {
 .formTable tbody tr:last-child td {
   border-bottom: none;
 }
-@media (min-width: 900px) {
-  .formTable {
-    min-width: 0;
-  }
-}
 
 .tableInput {
   width: 100%;
@@ -965,21 +898,121 @@ iframe {
   gap: 1.5rem;
 }
 
-/* ========================================
-   RESPONSIVE MOBILE STYLES - Agregá esto al final de tu CSS
-   ======================================== */
+.info-card {
+  background: #fff6d9;
+  border-radius: 12px;
+  padding: 55px 50px;
+  margin-bottom: 30px;
+  animation: fadeIn 0.6s ease-out 0.7s backwards;
+  border: 2px solid #f8c100;
+  color: #070500;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  align-items: center;
+}
 
+.btn {
+  flex: 1;
+  padding: 16px 24px;
+  border: none;
+  border-radius: 15px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-primary {
+  max-width: 200px;
+  font-weight: 500;
+  background: #ffffff;
+  color: rgb(0, 0, 0);
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3),
+    0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 8px 3px rgba(0, 0, 0, 0.15),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.3);
+}
+
+.btn-secondary {
+  background: white;
+  color: #407135;
+  border: 2px solid #407135;
+}
+
+.btn-secondary:hover {
+  background: #f7fafc;
+  transform: translateY(-2px);
+}
+
+.inputError {
+  border: 2px solid #e53935 !important;
+  outline: none;
+}
+
+.inputError:focus {
+  box-shadow: 0 0 0 3px rgba(229, 57, 53, 0.2);
+}
+
+/* ===========================
+   LAPTOP  (≤ 1200px)
+   =========================== */
+@media (max-width: 1200px) {
+  /* Ajustes generales suaves para pantallas un poco más chicas */
+
+  #formBody {
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+  }
+
+  .healthCheckboxGrid {
+    grid-template-columns: repeat(3, minmax(160px, 1fr));
+  }
+
+  .btn-primary {
+    max-width: 900px;
+    width: 100%;
+  }
+}
+
+/* ===========================
+   TABLET  (≤ 968px)
+   =========================== */
 @media (max-width: 968px) {
+  /* Navbar */
+  nav ul {
+    padding: 6px 20px 6px 40px;
+  }
+
+  .hideOnMobile {
+    display: none;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  /* Cards contenedoras */
   .sectionCardStyleContainer {
     padding: 30px 40px;
     gap: 30px;
   }
 
+  /* Lista de cosas a llevar: columnas → una sola columna */
   .itemsListContainer {
     flex-direction: column;
     gap: 40px;
   }
 
+  /* Líneas del formulario en columna */
   .formLine {
     flex-direction: column;
     gap: 12px;
@@ -990,10 +1023,25 @@ iframe {
     width: 100%;
     text-align: left;
   }
+
+  /* Layout general del form */
+  #formBody {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  /* About / Padre Lucas (por si lo reusás acá también) */
+  .sectionAboutContent {
+    flex-direction: column;
+  }
 }
 
-/* Móviles medianos (hasta 768px) */
+/* ===========================
+   MOBILE  (≤ 768px)
+   =========================== */
 @media (max-width: 768px) {
+  /* Tipografías un poco más chicas */
   .typ-subtitle-1 {
     font-size: 20px;
   }
@@ -1010,6 +1058,7 @@ iframe {
     font-size: 15px;
   }
 
+  /* Contenedor principal de tarjetas */
   .sectionCardStyleContainer {
     padding: 24px 20px;
     gap: 32px;
@@ -1036,6 +1085,7 @@ iframe {
   .formTableWrap {
     overflow-x: scroll;
     -webkit-overflow-scrolling: touch;
+    position: relative;
   }
 
   .formTable {
@@ -1051,6 +1101,22 @@ iframe {
   .tableInput {
     padding: 10px 12px;
     font-size: 14px;
+  }
+
+  /* Hint para hacer scroll en la tabla */
+  .formTableWrap::after {
+    content: "→ Deslizá";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    pointer-events: none;
+    opacity: 0.8;
   }
 
   /* Checkboxes de salud */
@@ -1086,15 +1152,42 @@ iframe {
     flex-shrink: 0;
   }
 
+  /* Botones principales */
   .btnPrimary {
     width: 100%;
     max-width: 100%;
     font-size: 18px;
     padding: 14px 24px;
   }
+
+  /* Inputs y touch UX */
+  input[type="checkbox"] {
+    min-width: 20px;
+    min-height: 20px;
+  }
+
+  .btnPrimary,
+  .btnSecondary {
+    min-height: 44px;
+    touch-action: manipulation;
+  }
+
+  /* Post-its (si los usás en esta página) */
+  .divAboutPostit {
+    flex: 1 1 clamp(150px, 45%, 220px);
+    max-width: none;
+  }
 }
 
+/* ===========================
+   MOBILE CHICO  (≤ 520px)
+   =========================== */
 @media (max-width: 520px) {
+  /* Navbar más compacta */
+  nav ul {
+    padding: 6px 0px 6px 24px;
+  }
+
   .typ-subtitle-1 {
     font-size: 18px;
   }
@@ -1134,14 +1227,8 @@ iframe {
   section {
     margin-bottom: 60px;
   }
-  /* 
-  .importantContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  } */
 
-  /* Lista de items */
+  /* Listas con sangría */
   .itemsList ul,
   .importantContainer ul {
     padding-left: 20px;
@@ -1152,7 +1239,7 @@ iframe {
     margin-bottom: 8px;
   }
 
-  /* Tabla más compacta */
+  /* Tabla aún más compacta */
   .formTable {
     min-width: 400px;
   }
@@ -1187,6 +1274,10 @@ iframe {
     height: 16px;
   }
 
+  .healthCheckboxGrid {
+    grid-template-columns: 1fr;
+  }
+
   /* Costo */
   .costo {
     padding: 20px 0;
@@ -1209,7 +1300,7 @@ iframe {
     padding: 12px 20px;
   }
 
-  /* Advertencia primera vez */
+  /* Aviso primera vez */
   .primeraVez {
     padding: 16px;
     gap: 12px;
@@ -1223,136 +1314,9 @@ iframe {
     font-size: 12px;
     line-height: 1.5;
   }
-}
 
-/* Mejoras de UX para touch */
-@media (max-width: 768px) {
-  /* Inputs más grandes para mejor toque */
-
-  /* Checkboxes más grandes */
-  input[type="checkbox"] {
-    min-width: 20px;
-    min-height: 20px;
-  }
-
-  /* Botones más accesibles */
-  .btnPrimary,
-  .btnSecondary {
-    min-height: 44px;
-    touch-action: manipulation; /* Previene zoom en doble tap */
-  }
-
-  /* Mejor scroll en tablas */
-  .formTableWrap {
-    position: relative;
-  }
-
-  .formTableWrap::after {
-    content: "→ Deslizá";
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 11px;
-    pointer-events: none;
-    opacity: 0.8;
-  }
-
-  .formTableWrap::-webkit-scrollbar {
-    height: 8px;
-  }
-
-  .formTableWrap::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 4px;
-  }
-}
-
-/* Landscape en móviles */
-@media (max-height: 500px) and (orientation: landscape) {
-  .sectionCardStyleContainer {
-    padding: 20px;
-  }
-
-  section {
-    margin-bottom: 40px;
-  }
-
-  .finalFormPart {
-    margin: 20px;
-  }
-}
-
-.info-card {
-  background: #fff6d9;
-  border-radius: 12px;
-  padding: 55px 50px;
-  margin-bottom: 30px;
-  animation: fadeIn 0.6s ease-out 0.7s backwards;
-  border: 2px solid #f8c100;
-  color: #070500;
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-  align-items: center;
-}
-
-.btn {
-  flex: 1;
-  padding: 16px 24px;
-  border: none;
-  border-radius: 15px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  display: inline-block;
-  text-align: center;
-}
-
-.btn-primary {
-  max-width: 200px;
-  font-weight: 500;
-  background: #ffffff;
-  color: rgb(0, 0, 0);
-  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3),
-    0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-}
-
-@media (max-width: 800px) {
-  .btn-primary {
-    max-width: 900px;
+  /* Sidebar ocupa todo el ancho en móviles muy chicos */
+  .sidebar {
     width: 100%;
   }
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0px 4px 8px 3px rgba(0, 0, 0, 0.15),
-    0px 1px 3px 0px rgba(0, 0, 0, 0.3);
-}
-
-.btn-secondary {
-  background: white;
-  color: #407135;
-  border: 2px solid #407135;
-}
-
-.btn-secondary:hover {
-  background: #f7fafc;
-  transform: translateY(-2px);
-}
-
-.inputError {
-  border: 2px solid #e53935 !important;
-  outline: none;
-}
-
-.inputError:focus {
-  box-shadow: 0 0 0 3px rgba(229, 57, 53, 0.2);
 }
