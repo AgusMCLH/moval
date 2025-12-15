@@ -3,8 +3,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
-  scroll-behavior: smooth;
 }
 
 :root {
@@ -138,12 +136,13 @@ body {
 }
 
 .sectionContentContainer {
+  margin: auto;
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 0 2rem;
   max-width: 1420px;
   gap: 40px;
   flex-direction: column;
@@ -196,7 +195,7 @@ section {
 
 .btnSecondary {
   width: fit-content;
-  font-family: "Poppins", sans-serif;
+  font-family: var(--ff-body);
   color: var(--grey-300);
   background-color: white;
   border-radius: 8px;
@@ -217,14 +216,25 @@ section {
 /**************************************** NavBar ****************************************/
 
 nav {
+  padding: 8px 0px;
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+  will-change: transform;
   background-color: var(--primary-color);
-  box-shadow: var(--shadow-m1);
+}
+
+nav.nav-hidden {
+  transform: translateY(-100%);
+}
+
+nav.nav-visible {
+  transform: translateY(0);
 }
 
 nav ul {
-  padding: 6px 40px 6px 37px;
-  margin: auto;
-  max-width: 1500px;
+  width: 100%;
   display: flex;
   list-style: none;
 }
@@ -235,22 +245,20 @@ nav a {
   text-decoration: none;
   display: flex;
   align-items: center;
-  border-radius: 2px;
   color: white;
   scroll-behavior: smooth;
+
+  transition: 0.4s;
 }
 
 nav a:hover {
   color: white;
+  border-radius: 8px;
   background-color: var(--primary-color-hover);
 }
 
 nav li:first-child {
   margin-right: auto;
-}
-
-nav li:last-child {
-  margin-left: auto;
 }
 
 .fa-xmark,
@@ -301,7 +309,7 @@ nav li:last-child {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 750px;
+  height: 100dvh;
   background-image: linear-gradient(
       rgba(61, 105, 53, 0.5),
       rgba(61, 105, 53, 0.5)
