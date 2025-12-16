@@ -947,11 +947,6 @@ iframe {
     margin-bottom: 80px;
   }
 
-  /* Nav más compacto y con menú hamburguesa */
-  nav ul {
-    padding: 6px 0px 6px 24px;
-  }
-
   .hideOnMobile {
     display: none;
   }
