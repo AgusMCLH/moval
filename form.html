@@ -24,34 +24,76 @@
   <!-- Navbar-->
     <nav>
       <div class="sectionContentContainer">
-      <ul class="sidebar">
-        <li onClick=hideSidebar()>
-          <a href="#"><i class="fa-solid fa-xmark"></a></i>
-        </li>
-        <li>
-          <a href="/index.html#aboutSection" class="typ-body">Nosotros</a>
-        </li>
-        <li><a href="/index.html#activitiesSection" class="typ-body">Actividades</a></li>
-        <li><a href="/index.html#mapSection" class="typ-body">Ubicación</a></li>
-        <li><a href="/index.html#faqSection" class="typ-body">Preguntas frecuentes</a></li>
-        <li>
-          <a href="http://wa.me/598098181614" target="_blank" rel="noopener noreferrer" class="btnSecondary">Contacto</a>
-        </li>
-      </ul>
-      <ul>
-        <li><img src="/Assets/MovalLogo.webp" alt="Moval Logo" /></li>
-        <li class="hideOnMobile" class="typ-body"><a href="/index.html#aboutSection">Nosotros</a></li>
-        <li class="hideOnMobile" class="typ-body"><a href="/index.html#activitiesSection">Actividades</a></li>
-        <li class="hideOnMobile" class="typ-body"><a href="/index.html#mapSection">Ubicación</a></li>
-        <li class="hideOnMobile" class="typ-body"><a href="/index.html#faqSection">Preguntas frecuentes</a></li>
-        <li class="hideOnMobile">
-          <a href="http://wa.me/598098181614" target="_blank" rel="noopener noreferrer" class="btnSecondary">Contacto</a>
-        </li>
-        <li class="menu-button" onClick=showSidebar()>
-          <a href="#"><i class="fa-solid fa-bars"></a></i>
-        </li>
-      </ul>
-      </div>  
+        <ul class="sidebar">
+          <li onClick="hideSidebar()">
+            <a href="#"><i class="fa-solid fa-xmark"></i></a>
+          </li>
+          <li>
+            <a href="/#aboutSection" class="typ-body nav-scroll">Nosotros</a>
+          </li>
+          <li>
+            <a href="/#activitiesSection" class="typ-body nav-scroll"
+              >Actividades</a
+            >
+          </li>
+          <li>
+            <a href="/#mapSection" class="typ-body nav-scroll">Ubicación</a>
+          </li>
+          <li>
+            <a href="/#faqSection" class="typ-body nav-scroll"
+              >Preguntas frecuentes</a
+            >
+          </li>
+          <li>
+            <a
+              href="http://wa.me/598098181614"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btnSecondary"
+            >
+              Contacto
+            </a>
+          </li>
+        </ul>
+
+        <ul>
+          <li>
+            <a href="/#heroSection" class="nav-scroll" id="movalLogo">
+              <img src="/Assets/MovalLogo.webp" alt="Moval Logo" />
+            </a>
+          </li>
+
+          <li class="hideOnMobile">
+            <a href="/#aboutSection" class="typ-body nav-scroll">Nosotros</a>
+          </li>
+          <li class="hideOnMobile">
+            <a href="/#activitiesSection" class="typ-body nav-scroll"
+              >Actividades</a
+            >
+          </li>
+          <li class="hideOnMobile">
+            <a href="/#mapSection" class="typ-body nav-scroll">Ubicación</a>
+          </li>
+          <li class="hideOnMobile">
+            <a href="/#faqSection" class="typ-body nav-scroll"
+              >Preguntas frecuentes</a
+            >
+          </li>
+          <li class="hideOnMobile">
+            <a
+              href="http://wa.me/598098181614"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btnSecondary"
+            >
+              Contacto
+            </a>
+          </li>
+          <li class="menu-button" onClick="showSidebar()">
+            <a href="#"><i class="fa-solid fa-bars"></i></a>
+          </li>
+        </ul>
+      </div>
     </nav>
     <section class="primeraVezSection">
         <div class="sectionContentContainer" id="primeraVez">

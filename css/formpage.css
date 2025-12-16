@@ -162,7 +162,13 @@ section {
   flex-direction: column;
   gap: 12px;
 }
+#movalLogo {
+  padding: 0;
+}
 
+#movalLogo:hover {
+  background-color: rgba(0, 0, 0, 0);
+}
 * {
   box-sizing: border-box;
   font-family: sans-serif;

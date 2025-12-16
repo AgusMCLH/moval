@@ -28,7 +28,6 @@ window.addEventListener("scroll", () => {
   lastScroll = currentScroll;
 });
 
-// Funciones del sidebar (las que ya tenías)
 function showSidebar() {
   const sidebar = document.querySelector(".sidebar");
   sidebar.style.display = "flex";
@@ -39,7 +38,6 @@ function hideSidebar() {
   sidebar.style.display = "none";
 }
 
-/* FAQ */
 function toggleFaq(element) {
   // Cerrar todas las demás FAQs
   const allFaqs = document.querySelectorAll(".Faq");
@@ -61,5 +59,51 @@ document.addEventListener("click", function (event) {
     allFaqs.forEach((faq) => {
       faq.classList.remove("active");
     });
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const navLinks = document.querySelectorAll("a.nav-scroll");
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", function (event) {
+      const targetId = this.getAttribute("href");
+
+      // solo manejamos anchors internos (#...)
+      if (!targetId || !targetId.startsWith("#")) return;
+
+      const targetEl = document.querySelector(targetId);
+      if (!targetEl) return;
+
+      event.preventDefault(); // acá evitamos que el navegador cambie la URL
+
+      targetEl.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+
+      // opcional: cerrar sidebar después de hacer click en mobile
+      if (this.closest(".sidebar")) {
+        if (typeof hideSidebar === "function") {
+          hideSidebar();
+        }
+      }
+    });
+  });
+
+  // Limpia el hash si llegaste desde otra página con index.html#algo
+  if (window.location.hash) {
+    // Opcional: si querés asegurar que se vea bien la sección:
+    const target = document.querySelector(window.location.hash);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    // Quitar el hash de la barra de direcciones
+    history.replaceState(
+      null,
+      document.title,
+      window.location.pathname + window.location.search
+    );
   }
 });
