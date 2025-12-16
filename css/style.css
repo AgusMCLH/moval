@@ -4,7 +4,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 :root {
   /* Colores */
   --primary-color: #407135;
@@ -128,7 +127,9 @@
 }
 
 /**************************************** General Styles ****************************************/
-
+html {
+  background-color: #2d5624;
+}
 body {
   background-color: #f1f1f1;
   color: var(--grey-300);
