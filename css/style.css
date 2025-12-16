@@ -462,6 +462,12 @@ nav li:first-child {
   object-fit: cover;
 }
 
+@media (max-width: 900px) {
+  .padreLucasImg {
+    padding: 12px;
+  }
+}
+
 .padreLucasTextContainer {
   flex: 1 1 0;
   display: flex;
