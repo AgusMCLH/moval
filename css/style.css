@@ -463,6 +463,12 @@ nav li:first-child {
 }
 
 @media (max-width: 900px) {
+  .ourTeamCard {
+    padding: 12px;
+  }
+  .sectionContentContainer {
+    padding: 12px;
+  }
   .padreLucasImg {
     padding: 12px;
   }
