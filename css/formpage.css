@@ -837,7 +837,7 @@ nav li:first-child {
 
   ul a,
   ul img {
-    padding: 0 2px;
+    padding: 0;
   }
 
   .typ-subtitle-1 {
