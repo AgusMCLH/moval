@@ -127,9 +127,7 @@
 }
 
 /**************************************** General Styles ****************************************/
-html {
-  background-color: #2d5624;
-}
+
 body {
   background-color: #f1f1f1;
   color: var(--grey-300);
