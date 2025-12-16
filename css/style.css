@@ -463,9 +463,6 @@ nav li:first-child {
 }
 
 @media (max-width: 900px) {
-  .ourTeamCard {
-    padding: 12px;
-  }
   .sectionContentContainer {
     padding: 12px;
   }
@@ -872,7 +869,18 @@ iframe {
    TABLET (≤ 968px)
    =========================== */
 @media (max-width: 968px) {
-  /* Espaciado vertical general */
+  .sectionContentContainer {
+    padding: 0 12px;
+  }
+  #movalLogo img {
+    height: 24px;
+  }
+
+  nav ul,
+  nav a {
+    padding: 0px;
+  }
+
   section {
     margin-bottom: 80px;
   }
@@ -931,9 +939,9 @@ iframe {
     flex-direction: column;
     gap: 20px;
   }
-
   .ourTeamCard {
     gap: 12px;
+    padding: 12px;
   }
 
   /* Checklist: solo la lista, sin foto */
@@ -1008,7 +1016,6 @@ iframe {
    MOBILE CHICO (≤ 520px)
    =========================== */
 @media (max-width: 520px) {
-  /* FAQ ocupa todo el ancho */
   .Faq {
     width: 100%;
   }

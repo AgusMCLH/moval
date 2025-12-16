@@ -126,7 +126,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 2rem;
+  padding: 0 20px;
   max-width: 1420px;
   gap: 40px;
   flex-direction: column;
@@ -235,100 +235,6 @@ section {
   transform: translateY(-2px);
   cursor: pointer;
   box-shadow: var(--shadow-m2);
-}
-
-nav {
-  padding: 8px 0px;
-  z-index: 100;
-  position: fixed;
-  width: 100%;
-  transition: transform 0.3s ease-in-out;
-  will-change: transform;
-  background-color: var(--primary-color);
-}
-
-nav.nav-hidden {
-  transform: translateY(-100%);
-}
-
-nav.nav-visible {
-  transform: translateY(0);
-}
-
-nav ul {
-  width: 100%;
-  display: flex;
-  list-style: none;
-}
-
-nav a {
-  height: 100%;
-  padding: 0 30px;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  color: white;
-  scroll-behavior: smooth;
-
-  transition: 0.4s;
-}
-
-nav a:hover {
-  color: white;
-  border-radius: 8px;
-  background-color: var(--primary-color-hover);
-}
-
-#movalLogo {
-  padding: 0;
-}
-
-#movalLogo:hover {
-  background-color: rgba(0, 0, 0, 0);
-}
-nav li:first-child {
-  margin-right: auto;
-}
-
-.fa-xmark,
-.fa-bars {
-  color: white;
-  font-size: 24px;
-}
-
-.sidebar {
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 100vh;
-  width: 250px;
-  z-index: 999;
-  background-color: var(--primary-color);
-  box-shadow: var(--shadow-m5);
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  display: none;
-  padding: 0;
-}
-
-.sidebar li {
-  text-align: left;
-  width: 100%;
-}
-
-.sidebar a {
-  height: 100%;
-  padding: 15px 30px;
-  width: 100%;
-}
-
-.sidebar li:last-child {
-  display: none;
-}
-
-.menu-button {
-  display: none;
 }
 
 #formBody {
@@ -616,13 +522,112 @@ nav li:first-child {
   }
 }
 
+nav {
+  padding: 8px 0px;
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+  will-change: transform;
+  background-color: var(--primary-color);
+}
+
+nav.nav-hidden {
+  transform: translateY(-100%);
+}
+
+nav.nav-visible {
+  transform: translateY(0);
+}
+
+nav ul {
+  width: 100%;
+  display: flex;
+  list-style: none;
+}
+
+nav a {
+  height: 100%;
+  padding: 0 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: white;
+  scroll-behavior: smooth;
+  transition: 0.4s;
+}
+
+nav a:hover {
+  color: white;
+  border-radius: 8px;
+  background-color: var(--primary-color-hover);
+}
+
+#movalLogo {
+  padding: 0;
+}
+
+#movalLogo:hover {
+  background-color: rgba(0, 0, 0, 0);
+}
+nav li:first-child {
+  margin-right: auto;
+}
+
+.fa-xmark,
+.fa-bars {
+  color: white;
+  font-size: 24px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  z-index: 999;
+  background-color: var(--primary-color);
+  box-shadow: var(--shadow-m5);
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  display: none;
+  padding: 0;
+}
+
+.sidebar li {
+  text-align: left;
+  width: 100%;
+}
+
+.sidebar a {
+  height: 100%;
+  padding: 15px 30px;
+  width: 100%;
+}
+
+.sidebar li:last-child {
+  display: none;
+}
+
+.menu-button {
+  display: none;
+}
+
 /* ===========================
    TABLET  (≤ 968px)
    =========================== */
 @media (max-width: 968px) {
   /* Navbar */
-  nav ul {
-    padding: 6px;
+
+  #movalLogo img {
+    height: 24px;
+  }
+
+  nav ul,
+  nav a {
+    padding: 0px;
   }
 
   .hideOnMobile {
@@ -689,6 +694,16 @@ nav li:first-child {
 
   .typ-body {
     font-size: 15px;
+  }
+
+  .sectionContentContainer {
+    padding: 0px 20px;
+    gap: 32px;
+  }
+
+  ul a,
+  ul img {
+    padding: 0 2px;
   }
 
   /* Contenedor principal de tarjetas */
@@ -814,8 +829,15 @@ nav li:first-child {
    =========================== */
 @media (max-width: 520px) {
   /* Navbar más compacta */
-  nav ul {
-    padding: 6px 0px 6px 0px;
+
+  .sectionContentContainer {
+    padding: 0px 12px;
+    gap: 32px;
+  }
+
+  ul a,
+  ul img {
+    padding: 0 2px;
   }
 
   .typ-subtitle-1 {
@@ -836,11 +858,6 @@ nav li:first-child {
 
   .typ-small {
     font-size: 13px;
-  }
-
-  .sectionContentContainer {
-    padding: 0 16px;
-    gap: 32px;
   }
 
   .sectionCardStyleContainer {
