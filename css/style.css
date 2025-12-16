@@ -142,7 +142,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 2rem;
+  padding: 0 20px;
   max-width: 1420px;
   gap: 40px;
   flex-direction: column;
@@ -241,7 +241,7 @@ nav ul {
 
 nav a {
   height: 100%;
-  padding: 0 30px;
+  padding: 0 20px;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -857,12 +857,6 @@ iframe {
   .Faq {
     width: 85%;
   }
-
-  :root {
-    --fs-h2: 32px;
-    --fs-lead: 16px;
-    --fs-body: 15px;
-  }
 }
 
 /* ===========================
@@ -898,7 +892,6 @@ iframe {
     transform: rotate(0deg);
   }
 
-  /* About + post-its en columna */
   .sectionAboutContent {
     display: flex;
     flex-direction: column;
@@ -906,7 +899,6 @@ iframe {
     height: fit-content;
   }
 
-  /* Bloque Padre Lucas en columna */
   .padreLucasContent {
     width: 100%;
     height: 100%;
@@ -933,7 +925,6 @@ iframe {
     align-items: center;
   }
 
-  /* Cards del equipo en columna */
   .ourTeamCards {
     width: 100%;
     flex-direction: column;
@@ -944,7 +935,6 @@ iframe {
     padding: 12px;
   }
 
-  /* Checklist: solo la lista, sin foto */
   .checkListPhotos {
     display: none;
   }
@@ -953,23 +943,19 @@ iframe {
     align-items: center;
   }
 
-  /* Lista de cosas a llevar: pasa a una columna */
   .itemsListContainer {
     flex-direction: column;
     gap: 32px;
   }
 
-  /* Actividades en 2 columnas */
   .activitiesGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  /* Footer un poco más compacto */
   .footerTextContainer {
     gap: 20px;
   }
 
-  /* Contenedor general de secciones un poco más compacto */
   .sectionContentContainer {
     gap: 30px;
   }
