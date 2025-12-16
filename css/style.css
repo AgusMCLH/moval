@@ -443,101 +443,22 @@ nav li:first-child {
   padding: clamp(16px, 3vw, 32px);
 }
 
-/* Contenedor de post-its */
-.divAboutPostitContainer {
-  width: 100%;
-  max-width: 100%;
-
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: stretch;
-
-  gap: clamp(8px, 1.2vw, 16px);
-}
-
-/* Post-it base */
-.divAboutPostit {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 16px;
-  height: fit-content;
-  padding: clamp(10px, 2rem, 144541px);
-  flex: 1 1 1;
-  max-width: 220px;
-  box-shadow: var(--shadow-m1);
-  min-width: 0;
-}
-
-/* Tipos dentro */
-.divAboutPostit p {
-  font-family: var(--ff-display);
-  font-weight: 300;
-  font-size: clamp(16px, 1.2vw, 20px);
-  line-height: 1.1;
-}
-
-.divAboutPostit span {
-  font-family: var(--ff-body);
-  font-weight: 500;
-  font-size: clamp(11px, 0.95vw, 14px);
-  opacity: 0.8;
-}
-
-/* Colores + rotaciones suaves */
-.postIt1 {
-  background-color: #87cddc;
-  transform: rotate(-2.5deg);
-  transition: 200ms;
-}
-
-.postIt1:hover {
-  transform: rotate(1.3deg);
-}
-
-.postIt2 {
-  background-color: #eee8a2;
-  transform: rotate(-1.8deg);
-  transition: 200ms;
-}
-
-.postIt2:hover {
-  transform: rotate(6deg);
-}
-
-.postIt3 {
-  background-color: #e0b4e8;
-  transform: rotate(2.2deg);
-  transition: 200ms;
-}
-
-.postIt3:hover {
-  transform: rotate(-4.2deg);
-}
-
 /***************************************** Padre Lucas *****************************************/
 
 .padreLucasContent {
   display: flex;
   gap: 40px;
-  width: 100%;
 }
 
 .padreLucasImg {
-  padding: 12px;
+  padding: 24px;
   flex: 2 1 0;
-  max-width: 100%;
   background-color: rgb(255, 255, 255);
-  border-radius: 12px;
-  box-shadow: var(--shadow-m2);
-  object-fit: cover;
+  box-shadow: var(--shadow-m1);
 }
 
 .padreLucasImg img {
-  height: 400px;
   width: 100%;
-  border-radius: 8px;
   object-fit: cover;
 }
 
@@ -549,7 +470,6 @@ nav li:first-child {
   text-align: left;
   align-items: flex-start;
   gap: 12px;
-  max-width: 420px;
 }
 
 .padreLucasTextContainer button {
@@ -573,12 +493,11 @@ nav li:first-child {
 /* Mejor usar background-color acá */
 .ourTeamCard {
   background-color: #fff;
-  padding: 12px;
+  padding: clamp(0px, 24px, 200px);
   display: flex;
   flex-direction: column;
   width: 100%;
-  border-radius: 12px;
-  box-shadow: var(--shadow-m1);
+  box-shadow: var(--shadow-m2);
   gap: 12px;
 }
 
@@ -589,7 +508,6 @@ nav li:first-child {
   height: auto;
   object-fit: cover;
   object-position: center;
-  border-radius: 8px;
   display: block;
   background-color: rgb(194, 194, 194);
 }
