@@ -4,9 +4,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 :root {
   /* Colores */
-  --primary-color: #407135;
+  --primary-color: #54774c;
   --primary-color-hover: #2d5624;
   --grey-300: #111;
 
@@ -263,6 +264,7 @@ nav a:hover {
 #movalLogo:hover {
   background-color: rgba(0, 0, 0, 0);
 }
+
 nav li:first-child {
   margin-right: auto;
 }
@@ -316,10 +318,8 @@ nav li:first-child {
   align-items: center;
   width: 100%;
   height: 100dvh;
-  background-image: linear-gradient(
-      rgba(61, 105, 53, 0.5),
-      rgba(61, 105, 53, 0.5)
-    ),
+  background-image: linear-gradient(rgba(61, 105, 53, 0.5),
+      rgba(61, 105, 53, 0.5)),
     url("/Assets/MovalHero.webp");
   background-position: center;
   background-repeat: no-repeat;
@@ -465,6 +465,7 @@ nav li:first-child {
   .sectionContentContainer {
     padding: 12px;
   }
+
   .padreLucasImg {
     padding: 12px;
   }
@@ -709,7 +710,7 @@ iframe {
 }
 
 /* opcional: estilo cuando está marcado */
-.checkItem input:checked + span {
+.checkItem input:checked+span {
   text-decoration: line-through;
   opacity: 0.65;
 }
@@ -752,6 +753,7 @@ iframe {
   display: block;
   border-radius: 8px;
 }
+
 /**************************************** FAQ ****************************************/
 .FaqContainer {
   display: flex;
@@ -841,10 +843,8 @@ iframe {
 }
 
 .sunrise {
-  background-image: linear-gradient(
-    rgba(241, 241, 241, 1),
-    rgba(255, 205, 161, 1)
-  );
+  background-image: linear-gradient(rgba(241, 241, 241, 1),
+      rgba(255, 205, 161, 1));
   width: 100%;
 }
 
@@ -852,6 +852,7 @@ iframe {
    LAPTOP (≤ 1200px)
    =========================== */
 @media (max-width: 1200px) {
+
   /* FAQ un poco más angosto + tipografías levemente más chicas */
   .Faq {
     width: 85%;
@@ -865,6 +866,7 @@ iframe {
   .sectionContentContainer {
     padding: 0 12px;
   }
+
   #movalLogo img {
     height: 32px;
   }
@@ -929,6 +931,7 @@ iframe {
     flex-direction: column;
     gap: 20px;
   }
+
   .ourTeamCard {
     gap: 12px;
     padding: 12px;
@@ -964,6 +967,7 @@ iframe {
    MOBILE (≤ 768px)
    =========================== */
 @media (max-width: 768px) {
+
   /* FAQ más ancho y compacto */
   .Faq {
     width: 95%;
@@ -1038,5 +1042,372 @@ iframe {
   /* Sidebar ocupa todo el ancho */
   .sidebar {
     width: 100%;
+  }
+}
+
+/**************************************** Form Page Styles ****************************************/
+
+.primeraVezSection {
+  margin-top: 100px;
+  margin-bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 20px;
+}
+
+#primeraVez {
+  height: auto;
+  gap: 40px;
+  background-color: rgba(255, 187, 0, 0.3);
+  padding: clamp(2rem, 40px, 10%);
+  border: 3px solid rgb(255, 187, 0);
+}
+
+#primeraVez div {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#formBody {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.listaDeCosasALlevar,
+.fichaDelAcampante {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 20px;
+  margin: 0;
+}
+
+.sectionCardStyleContainer {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 40px 40px;
+  max-width: 1420px;
+  gap: 60px;
+  flex-direction: column;
+  background-color: #fff;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3),
+    0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+}
+
+.itemsListContainer {
+  width: 100%;
+  display: flex;
+  gap: 128px;
+}
+
+.itemsList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.importantContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.costo {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 40px 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formLine {
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  gap: 20px;
+}
+
+.formLine input,
+.formLine select {
+  border-radius: 4px;
+  padding: 16px 24px;
+  flex: 1;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3),
+    0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  border: none;
+  font-family: "Poppins", sans-serif;
+}
+
+.formLine p {
+  margin: auto;
+  height: -moz-fit-content;
+  height: fit-content;
+  flex: 0.4;
+}
+
+.healthFieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.healthFieldset legend {
+  margin-bottom: 10px;
+}
+
+.healthCheckboxGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(140px, 1fr));
+  gap: 10px 18px;
+}
+
+.healthCheck {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.healthCheck input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #111;
+}
+
+.formTableBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.formTableWrap {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 16px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3),
+    0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  background: #fff;
+}
+
+.formTable {
+  width: 100%;
+  min-width: 520px;
+  border-collapse: collapse;
+}
+
+.formTable thead th {
+  text-align: left;
+  padding: 14px 16px;
+  background: #fafafa;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.formTable thead th+th {
+  border-left: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.formTable td {
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.formTable td+td {
+  border-left: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.formTable tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.tableInput {
+  width: 100%;
+  padding: 12px 14px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: "Poppins", sans-serif;
+  box-shadow: none;
+}
+
+.tableHint {
+  opacity: 0.65;
+}
+
+.variableInputContainer {
+  display: none;
+}
+
+.finalFormPart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.finalFormPart .flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.finalFormPart .flex p {
+  min-width: 400px;
+  width: 35%;
+}
+
+.inputError {
+  border: 2px solid #e53935 !important;
+  outline: none;
+}
+
+.inputError:focus {
+  box-shadow: 0 0 0 3px rgba(229, 57, 53, 0.2);
+}
+
+/* Form Laptop */
+@media (max-width: 1200px) {
+  #formBody {
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+  }
+
+  .healthCheckboxGrid {
+    grid-template-columns: repeat(3, minmax(160px, 1fr));
+  }
+}
+
+/* Form Tablet */
+@media (max-width: 968px) {
+  .primeraVezSection {
+    margin-top: 60px;
+  }
+
+  .sectionCardStyleContainer {
+    padding: 30px 40px;
+    gap: 30px;
+  }
+
+  .itemsListContainer {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .formLine {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .formLine p {
+    flex: none;
+    width: 100%;
+    text-align: left;
+  }
+
+  #formBody {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+/* Form Mobile */
+@media (max-width: 768px) {
+  .sectionCardStyleContainer {
+    padding: 24px 20px;
+    gap: 32px;
+  }
+
+  .primeraVezSection,
+  .listaDeCosasALlevar,
+  .fichaDelAcampante {
+    padding: 0 20px;
+  }
+
+  .costo {
+    padding: 24px 0;
+  }
+
+  .formTableWrap {
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+  }
+
+  .formTable {
+    min-width: 480px;
+  }
+
+  .formTable thead th,
+  .formTable td {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .tableInput {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .formTableWrap::after {
+    content: "→ Deslizá";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    pointer-events: none;
+    opacity: 0.8;
+  }
+
+  .healthCheckboxGrid {
+    gap: 8px 12px;
+  }
+
+  .healthCheck span {
+    font-size: 15px;
+  }
+
+  .finalFormPart {
+    margin: 32px 20px;
+    gap: 20px;
+  }
+
+  .finalFormPart .flex {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .finalFormPart .flex p {
+    min-width: unset;
+    width: 100%;
+    max-width: unset;
+    font-size: 14px;
+  }
+
+  .finalFormPart .flex input[type="checkbox"] {
+    margin-top: 2px;
+    flex-shrink: 0;
   }
 }
