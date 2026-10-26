@@ -1,47 +1,86 @@
 // -----------------------------
 // Render condicional de inputs
 // -----------------------------
-const renderIllness = () => {
-  const render = document.getElementById("illnessChkInput").value === "true";
-  document.getElementById("illnessInputContainer").style.display = render
-    ? "flex"
-    : "none";
+// Al ocultar el campo se vacía: si no, se enviaría texto de una opción ya descartada.
+const toggleConditional = (selectId, containerId, inputId, showWhen) => {
+  const show = document.getElementById(selectId).value === showWhen;
+  document.getElementById(containerId).style.display = show ? "flex" : "none";
+  if (!show) document.getElementById(inputId).value = "";
 };
 
-const renderTreatment = () => {
-  const render = document.getElementById("treatmentChkInput").value === "si";
-  document.getElementById("treatmentInputContainer").style.display = render
-    ? "flex"
-    : "none";
-};
+const renderIllness = () =>
+  toggleConditional("illnessChkInput", "illnessInputContainer", "illnessInput", "true");
 
-const renderContraindicated = () => {
-  const render =
-    document.getElementById("contraindicatedChkInput").value === "si";
-  document.getElementById("contraindicatedInputContainer").style.display =
-    render ? "flex" : "none";
-};
+const renderTreatment = () =>
+  toggleConditional("treatmentChkInput", "treatmentInputContainer", "treatmentInput", "si");
+
+const renderContraindicated = () =>
+  toggleConditional(
+    "contraindicatedChkInput",
+    "contraindicatedInputContainer",
+    "contraindicatedInput",
+    "si"
+  );
 
 // -----------------------------
 // Validación UI (solo al submit)
 // -----------------------------
 const submitFormBtn = document.getElementById("submitFormBtn");
 const authorizationChkInput = document.getElementById("authorizationChkInput");
+const privacyChkInput = document.getElementById("privacyChkInput");
 
-const requiredFields = [
-  document.getElementById("nameInput"),
-  document.getElementById("ageInput"),
-  document.getElementById("ciInput"),
-  document.getElementById("telInput"),
-  document.getElementById("parentCelInput"),
-  document.getElementById("addressInput"),
-  document.getElementById("hospitalInput"),
-  document.getElementById("medicalEmergencyInput"),
-];
+const byId = (id) => document.getElementById(id);
 
-let triedSubmit = false;
+// Deja solo dígitos y saca ceros iniciales ("098 181 614" -> "98181614").
+const digitsOf = (value) => value.replace(/\D/g, "").replace(/^0+/, "");
 
 const isEmpty = (el) => !el || el.value.trim() === "";
+
+// Cada campo tiene su regla; las mismas se aplican en el backend.
+const validators = [
+  { el: byId("nameInput"), valid: (v) => v.trim() !== "" },
+  {
+    el: byId("ageInput"),
+    valid: (v) => /^\d+$/.test(v.trim()) && Number(v) >= 1 && Number(v) <= 19,
+  },
+  { el: byId("ciInput"), valid: (v) => /^\d{7,8}$/.test(digitsOf(v)) },
+  { el: byId("telInput"), valid: (v) => /^\d{8}$/.test(digitsOf(v)) },
+  { el: byId("parentCelInput"), valid: (v) => /^9\d{7}$/.test(digitsOf(v)) },
+  { el: byId("addressInput"), valid: (v) => v.trim() !== "" },
+  { el: byId("hospitalInput"), valid: (v) => v.trim() !== "" },
+  { el: byId("medicalEmergencyInput"), valid: (v) => v.trim() !== "" },
+  // Preguntas de salud: sin responder no se puede asumir "ninguna".
+  { el: byId("illnessChkInput"), valid: (v) => v !== "" },
+  { el: byId("treatmentChkInput"), valid: (v) => v !== "" },
+  { el: byId("contraindicatedChkInput"), valid: (v) => v !== "" },
+  {
+    el: byId("illnessInput"),
+    valid: (v) => byId("illnessChkInput").value !== "true" || v.trim() !== "",
+  },
+  {
+    el: byId("treatmentInput"),
+    valid: (v) => byId("treatmentChkInput").value !== "si" || v.trim() !== "",
+  },
+  {
+    el: byId("contraindicatedInput"),
+    valid: (v) => byId("contraindicatedChkInput").value !== "si" || v.trim() !== "",
+  },
+];
+
+// Un nombre de medicamento sin dosis es válido; una dosis sin nombre no.
+const medicationRowsValid = () => {
+  const names = document.getElementsByClassName("tableMedicationsInputName");
+  const dosages = document.getElementsByClassName("tableMedicationsInputDosis");
+  let ok = true;
+  for (let i = 0; i < names.length; i++) {
+    const bad = isEmpty(names[i]) && !isEmpty(dosages[i]);
+    setError(names[i], bad);
+    if (bad) ok = false;
+  }
+  return ok;
+};
+
+let triedSubmit = false;
 
 const setError = (el, hasError) => {
   if (!el) return;
@@ -49,155 +88,122 @@ const setError = (el, hasError) => {
   el.setAttribute("aria-invalid", hasError ? "true" : "false");
 };
 
-// solo valida cuando se hizo click en enviar (triedSubmit = true)
-const validateRequiredFields = () => {
-  let ok = true;
-
-  requiredFields.forEach((field) => {
-    const empty = isEmpty(field);
-    setError(field, empty);
-    if (empty) ok = false;
-  });
-
+const validateField = ({ el, valid }) => {
+  const ok = valid(el.value);
+  setError(el, !ok);
   return ok;
+};
+
+// solo valida cuando se hizo click en enviar (triedSubmit = true)
+const validateAll = () => {
+  const results = validators.map(validateField);
+  return results.every(Boolean) && medicationRowsValid();
 };
 
 // antes del submit: no marca rojo
 // después del primer submit: marca/limpia en vivo
-const wireLiveValidation = () => {
-  requiredFields.forEach((field) => {
-    if (!field) return;
+validators.forEach((validator) => {
+  ["input", "change", "blur"].forEach((eventName) =>
+    validator.el.addEventListener(eventName, () => {
+      if (triedSubmit) validateField(validator);
+    })
+  );
+});
 
-    field.addEventListener("input", () => {
-      if (!triedSubmit) return; // no marcar nada antes del submit
-      setError(field, isEmpty(field));
-    });
+// -----------------------------
+// Envío
+// -----------------------------
+const SUSCEPTIBLE_OPTIONS = [
+  ["suceptibleOidos", "Oídos"],
+  ["suceptibleGarganta", "Garganta"],
+  ["suceptibleBronquitis", "Bronquitis"],
+  ["suceptibleAsma", "Asma"],
+  ["suceptibleDolorCabeza", "Dolor de cabeza"],
+  ["suceptibleMareos", "Mareos"],
+  ["suceptibleTrastornosDigestivos", "Trastornos digestivos"],
+  ["suceptibleResfrioTos", "Resfrío y tos"],
+];
 
-    field.addEventListener("blur", () => {
-      if (!triedSubmit) return; // no marcar nada antes del submit
-      setError(field, isEmpty(field));
-    });
-  });
+const collectMedications = () => {
+  const names = document.getElementsByClassName("tableMedicationsInputName");
+  const dosages = document.getElementsByClassName("tableMedicationsInputDosis");
+  const medications = [];
+  for (let i = 0; i < names.length; i++) {
+    const name = names[i].value.trim();
+    if (name) medications.push({ name, dosage: dosages[i].value.trim() });
+  }
+  return medications;
 };
 
-wireLiveValidation();
+const buildPayload = () => ({
+  name: byId("nameInput").value.trim(),
+  age: byId("ageInput").value,
+  dni: digitsOf(byId("ciInput").value),
+  direction: byId("addressInput").value.trim(),
+  telephone: digitsOf(byId("telInput").value),
+  parentsCellphone: digitsOf(byId("parentCelInput").value),
+  hospital: byId("hospitalInput").value.trim(),
+  medicalEmergency: byId("medicalEmergencyInput").value.trim(),
+  illness: byId("illnessInput").value.trim(),
+  treatment: byId("treatmentInput").value.trim(),
+  contraindications: byId("contraindicatedInput").value.trim(),
+  susceptibleIllness: SUSCEPTIBLE_OPTIONS.filter(([id]) => byId(id).checked).map(
+    ([, label]) => label
+  ),
+  medications: collectMedications(),
+  authorization: authorizationChkInput.checked,
+  privacyAccepted: privacyChkInput.checked,
+  secured: byId("serialNumberInput").value.trim(),
+});
 
-// -----------------------------
-// Envío (tu lógica)
-// -----------------------------
+let sending = false;
+
 const sendFormData = async () => {
-  const name = document.getElementById("nameInput").value.trim();
-  const age = document.getElementById("ageInput").value;
-  const dni = document.getElementById("ciInput").value;
-  const tel = document.getElementById("telInput").value;
-  const parentCell = document.getElementById("parentCelInput").value;
-  const addressInput = document.getElementById("addressInput").value.trim();
-  const hospital = document.getElementById("hospitalInput").value.trim();
-  const medicalEmergency = document
-    .getElementById("medicalEmergencyInput")
-    .value.trim();
-  const illness = document.getElementById("illnessInput").value.trim();
-  const treatment = document.getElementById("treatmentInput").value.trim();
-  const contraindicated = document
-    .getElementById("contraindicatedInput")
-    .value.trim();
-  const serialNumber = document
-    .getElementById("serialNumberInput")
-    .value.trim();
+  if (sending) return;
+  sending = true;
+  submitFormBtn.disabled = true;
+  const originalLabel = submitFormBtn.textContent;
+  submitFormBtn.textContent = "Enviando...";
 
-  const suceptibleOidos = document.getElementById("suceptibleOidos").checked;
-  const suceptibleGarganta =
-    document.getElementById("suceptibleGarganta").checked;
-  const suceptibleBronquitis = document.getElementById(
-    "suceptibleBronquitis"
-  ).checked;
-  const suceptibleAsma = document.getElementById("suceptibleAsma").checked;
-  const suceptibleDolorCabeza = document.getElementById(
-    "suceptibleDolorCabeza"
-  ).checked;
-  const suceptibleMareos = document.getElementById("suceptibleMareos").checked;
-  const suceptibletrastornosDigestivos = document.getElementById(
-    "suceptibleTrastornosDigestivos"
-  ).checked;
-  const suceptibleResfrioTos = document.getElementById(
-    "suceptibleResfrioTos"
-  ).checked;
-
-  let suceptiveness = "";
-  suceptibleOidos && (suceptiveness += "Oídos, ");
-  suceptibleGarganta && (suceptiveness += "Garganta, ");
-  suceptibleBronquitis && (suceptiveness += "Bronquitis, ");
-  suceptibleAsma && (suceptiveness += "Asma, ");
-  suceptibleDolorCabeza && (suceptiveness += "Dolor de cabeza, ");
-  suceptibleMareos && (suceptiveness += "Mareos, ");
-  suceptibletrastornosDigestivos &&
-    (suceptiveness += "Trastornos digestivos, ");
-  suceptibleResfrioTos && (suceptiveness += "Resfrío y tos, ");
-
-  const medicationsName = document.getElementsByClassName(
-    "tableMedicationsInputName"
-  );
-  const medicationsDosage = document.getElementsByClassName(
-    "tableMedicationsInputDosis"
-  );
-
-  let medications = [];
-  for (let i = 0; i < medicationsName.length; i++) {
-    const medName = medicationsName[i].value.trim();
-    const medDosage = medicationsDosage[i].value.trim();
-    if (medName && medDosage) {
-      medications.push({ name: medName, dosage: medDosage });
-    }
-  }
-
-  const data = {
-    name,
-    age,
-    dni,
-    direction: addressInput,
-    telephone: tel,
-    parentsCellphone: parentCell,
-    hospital,
-    medicalEmergency,
-    illness,
-    treatment,
-    contraindications: contraindicated,
-    susceptibleIllness: suceptiveness,
-    secured: serialNumber,
-    medications,
-  };
+  const payload = buildPayload();
 
   try {
-    const response = await fetch("https://back.moval.uy/api/campers", {
+    const response = await fetch(`${API_URL}/api/campers`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
+      body: JSON.stringify(payload),
     });
 
     if (response.ok) {
-      const nombreUsuario = name.split(" ")[0];
-      window.location.href = "/registroExitoso.html?name=" + nombreUsuario;
+      const firstName = encodeURIComponent(payload.name.split(" ")[0]);
+      window.location.href = "/registroExitoso.html?name=" + firstName;
       return;
     }
 
-    alert("No se pudo enviar la ficha. Intenta de nuevo.");
+    const body = await response.json().catch(() => ({}));
+    alert(
+      response.status >= 500 || !body.error
+        ? "No se pudo enviar la ficha. Intentá de nuevo en unos minutos."
+        : `No se pudo enviar la ficha: ${body.error}`
+    );
   } catch (error) {
     console.error("Fetch falló:", error);
-    alert("Error de red o CORS al enviar la ficha. Abre la consola.");
+    alert("No se pudo conectar con el servidor. Revisá tu conexión e intentá de nuevo.");
   }
+
+  sending = false;
+  submitFormBtn.disabled = false;
+  submitFormBtn.textContent = originalLabel;
 };
 
 submitFormBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
-  triedSubmit = true; // a partir de acá se empiezan a marcar los vacíos
+  triedSubmit = true; // a partir de acá se empiezan a marcar los inválidos
 
-  // 1) Validar campos principales
-  const ok = validateRequiredFields();
-  if (!ok) {
-    const firstError = requiredFields.find((f) =>
-      f.classList.contains("inputError")
-    );
+  // 1) Validar campos
+  if (!validateAll()) {
+    const firstError = document.querySelector(".inputError");
     if (firstError) firstError.focus();
     return; // no envía
   }
@@ -208,6 +214,34 @@ submitFormBtn.addEventListener("click", (e) => {
     return;
   }
 
-  // 3) Enviar
+  // 3) Validar aviso de privacidad (datos de salud)
+  if (!privacyChkInput.checked) {
+    alert("Debe aceptar el aviso de privacidad para guardar los datos de salud y enviar la ficha.");
+    return;
+  }
+
+  // 4) Enviar
   sendFormData();
 });
+
+// -----------------------------
+// Inscripciones cerradas
+// -----------------------------
+// El modal viene visible en el HTML (sin JS también se ve); si las inscripciones están abiertas se quita.
+const avisoModal = document.getElementById("avisoInscripcion");
+
+if (isRegistrationOpen()) {
+  avisoModal.remove();
+} else {
+  // Todo lo demás queda inerte: sin clics, foco ni lectores de pantalla por debajo del modal.
+  [...document.body.children]
+    .filter((el) => el !== avisoModal && el.tagName !== "SCRIPT")
+    .forEach((el) => el.setAttribute("inert", ""));
+  document.querySelector(".fichaDelAcampante").classList.add("formClosed");
+  document.querySelector(".finalFormPart").classList.add("formClosed");
+  document
+    .querySelectorAll(".fichaDelAcampante input, .fichaDelAcampante select, #authorizationChkInput, #privacyChkInput")
+    .forEach((el) => (el.disabled = true));
+  submitFormBtn.disabled = true;
+  submitFormBtn.textContent = "No disponible";
+}

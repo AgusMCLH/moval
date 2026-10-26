@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Formulario enviado - Moval</title>
     <link rel="icon" type="image/png" href="Assets/Favico.png" />
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <style>
       * {
         margin: 0;
@@ -336,10 +336,10 @@
         >
       </div>
       <div class="buttons">
-        <a href="/" class="btn btn-secondary"> Volver al Inicio </a>
+        <a href="./" class="btn btn-secondary"> Volver al Inicio </a>
         <a
           class="btn btn-primary"
-          href="/Assets/AutorizacionMoval2026.pdf"
+          href="./Assets/AutorizacionMoval2026.pdf"
           download="Autorización Moval 2026.pdf"
         >
           Descargar autorización
@@ -373,23 +373,9 @@
         }
       }
 
-      // Generar número de confirmación aleatorio
-      function generateConfirmationNumber() {
-        const num = Math.floor(Math.random() * 9000) + 1000;
-        document.getElementById(
-          "confirmNumber"
-        ).textContent = `CAMP-2024-${num}`;
-      }
-
-      // Función para descargar confirmación (simulada)
-      function downloadConfirmation() {
-        alert("");
-      }
-
       // Inicializar al cargar
       window.addEventListener("load", () => {
         createConfetti();
-        generateConfirmationNumber();
       });
     </script>
   </body>

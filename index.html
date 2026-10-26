@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Moval</title>
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,8 +18,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="icon" type="image/png" href="/Assets/Favico.png" />
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="icon" type="image/png" href="./Assets/Favico.png" />
+    <link rel="stylesheet" href="./css/style.css" />
     <meta name="theme-color" content="#407135" />
   </head>
 
@@ -35,21 +35,17 @@
             <a href="#aboutSection" class="typ-body nav-scroll">Nosotros</a>
           </li>
           <li>
-            <a href="#activitiesSection" class="typ-body nav-scroll"
-              >Actividades</a
-            >
+            <a href="#activitiesSection" class="typ-body nav-scroll">Actividades</a>
           </li>
           <li>
             <a href="#mapSection" class="typ-body nav-scroll">Ubicación</a>
           </li>
           <li>
-            <a href="#faqSection" class="typ-body nav-scroll"
-              >Preguntas frecuentes</a
-            >
+            <a href="#faqSection" class="typ-body nav-scroll">Preguntas frecuentes</a>
           </li>
           <li>
             <a
-              href="http://wa.me/598098181614"
+              href="https://wa.me/59898181614"
               target="_blank"
               rel="noopener noreferrer"
               class="btnSecondary"
@@ -62,7 +58,7 @@
         <ul>
           <li>
             <a href="#heroSection" class="nav-scroll" id="movalLogo">
-              <img src="/Assets/MovalLogo.webp" alt="Moval Logo" />
+              <img src="./Assets/MovalLogo.webp" alt="Moval Logo" />
             </a>
           </li>
 
@@ -70,21 +66,17 @@
             <a href="#aboutSection" class="typ-body nav-scroll">Nosotros</a>
           </li>
           <li class="hideOnMobile">
-            <a href="#activitiesSection" class="typ-body nav-scroll"
-              >Actividades</a
-            >
+            <a href="#activitiesSection" class="typ-body nav-scroll">Actividades</a>
           </li>
           <li class="hideOnMobile">
             <a href="#mapSection" class="typ-body nav-scroll">Ubicación</a>
           </li>
           <li class="hideOnMobile">
-            <a href="#faqSection" class="typ-body nav-scroll"
-              >Preguntas frecuentes</a
-            >
+            <a href="#faqSection" class="typ-body nav-scroll">Preguntas frecuentes</a>
           </li>
           <li class="hideOnMobile">
             <a
-              href="http://wa.me/598098181614"
+              href="https://wa.me/59898181614"
               target="_blank"
               rel="noopener noreferrer"
               class="btnSecondary"
@@ -106,22 +98,42 @@
           <div class="heroContent">
             <div class="heroTextContainer">
               <div class="heroTitleContainer">
-                <h1 class="typ-display heroTitle">
-                  MOVIMIENTO<br />AIRE LIBRE
-                </h1>
+                <h1 class="typ-display heroTitle">MOVIMIENTO<br />AIRE LIBRE</h1>
                 <div class="heroSubtitleContainer">
                   <h2 class="typ-subtitle-2 heroSubtitle">Desde 1982</h2>
                 </div>
               </div>
-              <!-- <p class="typ-lead">
-              
-            </p> -->
+              <div class="countdown" id="countdown" role="timer" aria-label="Cuenta regresiva para Moval">
+                <p class="typ-small countdownLabel" id="countdownLabel">Faltan para el campamento</p>
+                <div class="countdownUnits" id="countdownUnits">
+                  <div class="countdownUnit">
+                    <span class="countdownValue" id="cdMonths">--</span>
+                    <span class="countdownName" id="cdMonthsName">Meses</span>
+                  </div>
+                  <span class="countdownDash" aria-hidden="true"></span>
+                  <div class="countdownUnit">
+                    <span class="countdownValue" id="cdDays">--</span>
+                    <span class="countdownName" id="cdDaysName">Días</span>
+                  </div>
+                  <span class="countdownDash" aria-hidden="true"></span>
+                  <div class="countdownUnit">
+                    <span class="countdownValue" id="cdHours">--</span>
+                    <span class="countdownName" id="cdHoursName">Horas</span>
+                  </div>
+                  <span class="countdownDash" aria-hidden="true"></span>
+                  <div class="countdownUnit">
+                    <span class="countdownValue" id="cdMinutes">--</span>
+                    <span class="countdownName" id="cdMinutesName">Minutos</span>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="ctaContainer">
-              <a href="/form.html" class="btnPrimary">Inscribirse</a>
-              <p class="typ-small">
-                Para niños y adolescentes entre 7 y 17 años
-              </p>
+              <a class="btnPrimary btnDisabled" role="button" aria-disabled="true" tabindex="-1">
+                <span class="btnDisabledText">No disponible...</span>
+                <span class="btnDisabledHover" aria-hidden="true">Todavía...</span>
+              </a>
+              <p class="typ-small">Para niños y adolescentes entre 7 y 17 años</p>
             </div>
           </div>
         </div>
@@ -134,7 +146,7 @@
         <div class="sectionAboutContent">
           <div class="divAboutLeft">
             <div class="imageCard">
-              <img src="/Assets/Campamento.webp" alt="About Moval" />
+              <img src="./Assets/Campamento.webp" alt="About Moval" />
             </div>
           </div>
 
@@ -156,20 +168,19 @@
             </div> -->
             <div class="divAboutTextContainer">
               <p class="typ-body">
-                Moval es un campamento para niños y adolescentes de 7 a 17 años,
-                creado para reconectar con los demás, con uno mismo, con la fe y
-                con la naturaleza. <br />
+                Moval es un campamento para niños y adolescentes de 7 a 17 años, creado para
+                reconectar con los demás, con uno mismo, con la fe y con la naturaleza. <br />
                 <br />
-                Durante una semana sin celulares, vivimos actividades, juegos y
-                momentos de reflexión que ayudan a crecer, aprender a mirar al
-                prójimo y entender mejor nuestras emociones.
+                Durante una semana sin celulares, vivimos actividades, juegos y momentos de
+                reflexión que ayudan a crecer, aprender a mirar al prójimo y entender mejor nuestras
+                emociones.
 
                 <br />
                 <br />
-                Nuestra misión es formar, contener y educar desde el servicio y
-                el amor, en un entorno seguro y profundamente humano. Queremos
-                que cada acampante viva una experiencia única, acompañada por un
-                equipo enorme y dedicado, que pone el corazón en cada detalle.
+                Nuestra misión es formar, contener y educar desde el servicio y el amor, en un
+                entorno seguro y profundamente humano. Queremos que cada acampante viva una
+                experiencia única, acompañada por un equipo enorme y dedicado, que pone el corazón
+                en cada detalle.
 
                 <br />
                 <br />
@@ -177,10 +188,7 @@
               </p>
             </div>
             <button class="btnSecondary">
-              <a
-                style="text-decoration: none; color: black"
-                href="#ourTeamSection"
-                class="typ-body"
+              <a style="text-decoration: none; color: black" href="#ourTeamSection" class="typ-body"
                 >Leer más</a
               >
             </button>
@@ -195,27 +203,21 @@
         <h1 class="typ-h2">Nuestro equipo</h1>
         <div class="ourTeamCards">
           <div class="ourTeamCard">
-            <img src="/Assets/PatiDurdos.webp" alt="Foto de Patricia Durdos" />
+            <img src="./Assets/PatiDurdos.webp" alt="Foto de Patricia Durdos" />
             <div class="ourTeamCardTextContainer">
               <p class="typ-lead">Patricia Durdos</p>
             </div>
           </div>
 
           <div class="ourTeamCard ourTeamCardFerreria">
-            <img
-              src="/Assets/PatiFerreira.webp"
-              alt="Foto de Patricia Ferreira"
-            />
+            <img src="./Assets/PatiFerreira.webp" alt="Foto de Patricia Ferreira" />
             <div class="ourTeamCardTextContainer">
               <p class="typ-lead">Patricia Ferreira</p>
             </div>
           </div>
 
           <div class="ourTeamCard">
-            <img
-              src="/Assets/Monitores.webp"
-              alt="Foto del equipo de monitores"
-            />
+            <img src="./Assets/Monitores.webp" alt="Foto del equipo de monitores" />
             <div class="ourTeamCardTextContainer">
               <p class="typ-lead">Y un equipo de monitores maravilloso!</p>
             </div>
@@ -223,7 +225,7 @@
         </div>
         <div class="padreLucasContent">
           <div class="padreLucasImg">
-            <img src="/Assets/PadreLucas.webp" alt="Padre Lucas" />
+            <img src="./Assets/PadreLucas.webp" alt="Padre Lucas" />
           </div>
           <div class="padreLucasTextContainer">
             <div>
@@ -231,13 +233,11 @@
               <h2 class="typ-subtitle-2">1940 - 2014</h2>
             </div>
             <p class="typ-body">
-              Para Moval, el Padre Lucas es guía, origen y legado vivo. Nos
-              ayudó a construir una forma de comunidad donde el servicio, la
-              empatía y el bien del otro son camino. Marcó nuestras vidas y las
-              de nuestros hijos, y su consejo, su compañía y su serenidad siguen
-              presentes en lo que somos. Su huella permanece en nuestro corazón,
-              en nuestra palabra y en nuestra mente, como una luz que nos
-              acompaña cada año.
+              Para Moval, el Padre Lucas es guía, origen y legado vivo. Nos ayudó a construir una
+              forma de comunidad donde el servicio, la empatía y el bien del otro son camino. Marcó
+              nuestras vidas y las de nuestros hijos, y su consejo, su compañía y su serenidad
+              siguen presentes en lo que somos. Su huella permanece en nuestro corazón, en nuestra
+              palabra y en nuestra mente, como una luz que nos acompaña cada año.
             </p>
             <button>
               <a
@@ -298,10 +298,10 @@
         <div class="sectionTitleContainer">
           <h1 class="typ-h2">Donde estamos</h1>
           <p class="typ-lead">
-            Tres Arroyos es nuestro lugar desde hace más de 25 años. Aquí otras
-            organizaciones realizan retiros y campamentos. Es nuestro espacio y
-            el de todos. Contamos con cabañas, comedor, cocina y baños. Tres
-            arroyos se encuentra a 15 min (9.5km) de la ciudad de Minas
+            Tres Arroyos es nuestro lugar desde hace más de 25 años. Aquí otras organizaciones
+            realizan retiros y campamentos. Es nuestro espacio y el de todos. Contamos con cabañas,
+            comedor, cocina y baños. Tres arroyos se encuentra a 15 min (9.5km) de la ciudad de
+            Minas
           </p>
         </div>
         <iframe
@@ -391,10 +391,10 @@
           </div>
           <div class="checkListPhotos">
             <div id="checkListPhoto1" class="checkListPhoto">
-              <img src="/Assets/checklistimage2.webp" alt="" />
+              <img src="./Assets/checklistimage2.webp" alt="" />
             </div>
             <div id="checkListPhoto2" class="checkListPhoto">
-              <img src="/Assets/Checklist.webp" alt="" />
+              <img src="./Assets/Checklist.webp" alt="" />
             </div>
           </div>
         </div>
@@ -407,8 +407,8 @@
         <div class="sectionTitleContainer">
           <h1 class="typ-h2">¿Tenés alguna pregunta?</h1>
           <p class="typ-lead">
-            Cualquier duda que tengas, siempre podrás comunicarte con nosotros
-            por WhatsApp (098 181 614)
+            Cualquier duda que tengas, siempre podrás comunicarte con nosotros por WhatsApp (098 181
+            614)
           </p>
         </div>
         <div class="FaqContainer">
@@ -419,9 +419,9 @@
             </div>
             <div class="FaqAnswer">
               <p class="typ-body">
-                Sí, se solicitan 5500 pesos. Se abona por transferencia (CA
-                000769583-00001 | Claudio Perolo). De todas maneras y como
-                siempre ningún niño deja de ir por motivos económicos.
+                Sí, se solicitan 5500 pesos. Se abona por transferencia (CA 000769583-00001 |
+                Claudio Perolo). De todas maneras y como siempre ningún niño deja de ir por motivos
+                económicos.
               </p>
             </div>
           </div>
@@ -448,8 +448,8 @@
             </div>
             <div class="FaqAnswer">
               <p class="typ-body">
-                Si, contamos con médico y aparte avisamos al hospital de Minas
-                la cantidad de acampantes que llevamos.
+                Si, contamos con médico y aparte avisamos al hospital de Minas la cantidad de
+                acampantes que llevamos.
               </p>
             </div>
           </div>
@@ -471,21 +471,14 @@
       <div class="footerContentContainer">
         <div class="footerTextContainer">
           <h1 class="typ-h2">¡Inscribite ahora y vení a Moval!</h1>
-          <a href="/form.html" class="btnPrimary">Inscribirse</a>
+          <a class="btnPrimary btnDisabled" role="button" aria-disabled="true" tabindex="-1">
+                <span class="btnDisabledText">No disponible...</span>
+                <span class="btnDisabledHover" aria-hidden="true">Todavía...</span>
+              </a>
         </div>
-        <svg
-          class="sunrise"
-          viewBox="0 0 1920 714"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
+        <svg class="sunrise" viewBox="0 0 1920 714" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g clip-path="url(#clip0_125_583)">
-            <circle
-              cx="957.5"
-              cy="406"
-              r="140"
-              fill="url(#paint0_radial_125_583)"
-            />
+            <circle cx="957.5" cy="406" r="140" fill="url(#paint0_radial_125_583)" />
             <path
               d="M707.954 377.588L653.511 343.748C640.439 335.624 624.562 333.348 609.734 337.473L500.828 367.773C492.718 370.03 484.197 370.395 475.924 368.839L420.188 358.36C405.382 355.576 390.082 358.988 377.861 367.798L355.144 384.176C340.912 394.436 322.639 397.291 305.956 391.86L260.412 377.034C248.802 373.255 236.264 373.446 224.775 377.578L194.506 388.464C185.334 391.762 175.449 392.564 165.865 390.787L113.149 381.011C107.747 380.009 102.225 379.823 96.7673 380.457L33.0788 387.864C27.1228 388.557 21.0884 387.734 15.5352 385.473C-7.88159 375.935 -33.5 393.163 -33.5 418.447V659.5C-33.5 689.875 -8.87566 714.5 21.5 714.5H1878.5C1908.88 714.5 1933.5 689.875 1933.5 659.5V424.607C1933.5 395.571 1905 375.103 1877.49 384.375C1867.82 387.633 1857.3 387.301 1847.86 383.439L1821.35 372.598C1810.1 367.996 1797.64 367.252 1785.92 370.481L1734.39 384.68C1724.34 387.45 1713.7 387.305 1703.73 384.263L1613.72 356.807C1602.25 353.308 1589.95 353.654 1578.7 357.792L1498.52 387.269C1494.62 388.702 1490.57 389.69 1486.44 390.211L1411.65 399.678C1402.33 400.857 1392.86 399.629 1384.15 396.11L1289.13 357.732C1275.6 352.267 1260.45 352.403 1247.03 358.109L1214.83 371.788C1202.38 377.077 1188.42 377.594 1175.62 373.24L1135.4 359.567C1125.66 356.256 1115.19 355.742 1105.18 358.083L872.731 412.421C858.795 415.678 844.139 413.376 831.874 406.003L783.404 376.865C771.822 369.903 757.297 370.096 745.905 377.365C734.352 384.736 719.594 384.823 707.954 377.588Z"
               fill="#365A12"
@@ -539,6 +532,9 @@
     </section>
 
     <!-- JS  -->
-    <script src="/js/index.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/countdown.js"></script>
+    <script src="./js/config.js"></script>
+    <script src="./js/registration.js"></script>
   </body>
 </html>

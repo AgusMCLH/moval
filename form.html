@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ficha del acampante - Moval</title>
-  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="./css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="icon" type="image/png" href="/Assets/Favico.png">
+  <link rel="icon" type="image/png" href="./Assets/Favico.png">
 </head>
 
 <body id="formBody">
@@ -26,19 +26,19 @@
           <a href="#"><i class="fa-solid fa-xmark"></i></a>
         </li>
         <li>
-          <a href="/#aboutSection" class="typ-body nav-scroll">Nosotros</a>
+          <a href="./#aboutSection" class="typ-body nav-scroll">Nosotros</a>
         </li>
         <li>
-          <a href="/#activitiesSection" class="typ-body nav-scroll">Actividades</a>
+          <a href="./#activitiesSection" class="typ-body nav-scroll">Actividades</a>
         </li>
         <li>
-          <a href="/#mapSection" class="typ-body nav-scroll">Ubicación</a>
+          <a href="./#mapSection" class="typ-body nav-scroll">Ubicación</a>
         </li>
         <li>
-          <a href="/#faqSection" class="typ-body nav-scroll">Preguntas frecuentes</a>
+          <a href="./#faqSection" class="typ-body nav-scroll">Preguntas frecuentes</a>
         </li>
         <li>
-          <a href="http://wa.me/598098181614" target="_blank" rel="noopener noreferrer" class="btnSecondary">
+          <a href="https://wa.me/59898181614" target="_blank" rel="noopener noreferrer" class="btnSecondary">
             Contacto
           </a>
         </li>
@@ -46,25 +46,25 @@
 
       <ul>
         <li>
-          <a href="/#heroSection" class="nav-scroll" id="movalLogo">
-            <img src="/Assets/MovalLogo.webp" alt="Moval Logo" />
+          <a href="./#heroSection" class="nav-scroll" id="movalLogo">
+            <img src="./Assets/MovalLogo.webp" alt="Moval Logo" />
           </a>
         </li>
 
         <li class="hideOnMobile">
-          <a href="/#aboutSection" class="typ-body nav-scroll">Nosotros</a>
+          <a href="./#aboutSection" class="typ-body nav-scroll">Nosotros</a>
         </li>
         <li class="hideOnMobile">
-          <a href="/#activitiesSection" class="typ-body nav-scroll">Actividades</a>
+          <a href="./#activitiesSection" class="typ-body nav-scroll">Actividades</a>
         </li>
         <li class="hideOnMobile">
-          <a href="/#mapSection" class="typ-body nav-scroll">Ubicación</a>
+          <a href="./#mapSection" class="typ-body nav-scroll">Ubicación</a>
         </li>
         <li class="hideOnMobile">
-          <a href="/#faqSection" class="typ-body nav-scroll">Preguntas frecuentes</a>
+          <a href="./#faqSection" class="typ-body nav-scroll">Preguntas frecuentes</a>
         </li>
         <li class="hideOnMobile">
-          <a href="http://wa.me/598098181614" target="_blank" rel="noopener noreferrer" class="btnSecondary">
+          <a href="https://wa.me/59898181614" target="_blank" rel="noopener noreferrer" class="btnSecondary">
             Contacto
           </a>
         </li>
@@ -74,6 +74,17 @@
       </ul>
     </div>
   </nav>
+  <!-- Modal no cerrable: inscripciones todavía no abiertas -->
+  <div class="avisoOverlay" id="avisoInscripcion" role="dialog" aria-modal="true"
+    aria-labelledby="avisoTitulo" aria-describedby="avisoTexto">
+    <div class="avisoModal">
+      <i class="fa-solid fa-hourglass-half avisoIcon" aria-hidden="true"></i>
+      <h2 class="typ-h3" id="avisoTitulo">Todavía no abrimos inscripciones</h2>
+      <p class="typ-body" id="avisoTexto">Apreciamos las ganas de participar, pero todavia no abrimos inscripciones.</p>
+      <a href="./" class="btnSecondary">Volver al inicio</a>
+    </div>
+  </div>
+
   <section class="primeraVezSection">
     <div class="sectionContentContainer" id="primeraVez">
 
@@ -175,25 +186,22 @@
         </div>
       </div>
       <div class="costo">
-        <p class="typ-subtitle-2">El costo del campamento es de $ 5.500. </p>
+        <p class="typ-subtitle-2">El costo del campamento es de $ 5.500.</p>
         <p class="typ-body">En lo posible se solicita se abone cuando se realiza la inscripción. Se reciben hasta el 19
-          de diciembre.
-          <br><span class="fw-700">Como siempre, ningún niño deja de ir por no poder abonarlo. Cada uno colabora con lo
-            que puede.
-            Los esperamos!!!!!!</span>
-          <br>
-          <br>
-          <span class="typ-lead"> Brou: CA 000769583-00001 | Claudio Perolo</span>
-        </p>
+          de diciembre.</p>
+        <p class="typ-body fw-700">Como siempre, ningún niño deja de ir por no poder abonarlo. Cada uno colabora con lo
+          que puede. ¡Los esperamos!</p>
+        <p class="typ-lead costoBanco">Brou: CA 000769583-00001 | Claudio Perolo</p>
       </div>
     </div>
     </div>
   </section>
   <section class="fichaDelAcampante">
     <div class="sectionCardStyleContainer">
-      <p class="typ-subtitle-1">FICHA DEL ACAMPANTE MOVAL 2026</p>
+      <h2 class="typ-subtitle-1">FICHA DEL ACAMPANTE MOVAL 2027</h2>
       <form action="" method="post" class="form">
-        <div class="formLine">
+        <h3 class="formSectionTitle"><i class="fa-solid fa-child-reaching" aria-hidden="true"></i>Datos del acampante</h3>
+        <div class="formLine formFull">
           <p class="typ-lead">NOMBRE Y APELLIDO * </p><input id="nameInput" maxlength="100" type="text" value=""
             class="formInput" placeholder="Nombre y apellido del acampante">
         </div>
@@ -205,6 +213,11 @@
           <p class="typ-lead">CÉDULA DE IDENTIDAD * </p><input id="ciInput" type="number" min="10000000" max="99999999"
             class="formInput" placeholder="Cédula de identidad del acampante, sin puntos ni guiones">
         </div>
+        <div class="formLine formFull">
+          <p class="typ-lead">DOMICILIO *</p><input id="addressInput" type="text" maxlength="100" class="formInput"
+            placeholder="Domicilio del acampante">
+        </div>
+        <h3 class="formSectionTitle"><i class="fa-solid fa-phone" aria-hidden="true"></i>Contacto</h3>
         <div class="formLine">
           <p class="typ-lead">TELÉFONO PARTICULAR *</p><input id="telInput" type="number" min="10000000" max="99999999"
             class="formInput" placeholder="Teléfono particular">
@@ -213,10 +226,8 @@
           <p class="typ-lead">CEL. DE PADRE Y/O MADRE *</p><input id="parentCelInput" type="number" min="90000000"
             max="99999999" class="formInput" placeholder="Celular de madre o padre">
         </div>
-        <div class="formLine">
-          <p class="typ-lead">DOMICILIO *</p><input id="addressInput" type="text" maxlength="100" class="formInput"
-            placeholder="Domicilio del acampante">
-        </div>
+        
+        <h3 class="formSectionTitle"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i>Salud</h3>
         <div class="formLine">
           <p class="typ-lead">SOCIEDAD MÉDICA *</p><input id="hospitalInput" type="text" maxlength="100"
             class="formInput" placeholder="Sociedad médica del acampante">
@@ -226,11 +237,11 @@
             class="formInput" placeholder="Emergencia médica del acampante">
         </div>
         <div class="formLine">
-          <p class="typ-lead">¿PADECE ALGUNA ENFERMEDAD?</p>
+          <p class="typ-lead">¿PADECE ALGUNA ENFERMEDAD? *</p>
           <select name="" onchange="renderIllness()" id="illnessChkInput">
             <option value="">Seleccione una opción</option>
-            <option value=true>Si</option>
-            <option value=false>No</option>
+            <option value="true">Si</option>
+            <option value="false">No</option>
           </select>
         </div>
         <div class="formLine variableInputContainer" id="illnessInputContainer">
@@ -283,7 +294,7 @@
           </div>
         </fieldset>
         <div class="formLine">
-          <p class="typ-lead ">¿ESTÁ SIGUIENDO ALGÚN TRATAMIENTO MÉDICO?</p>
+          <p class="typ-lead ">¿ESTÁ SIGUIENDO ALGÚN TRATAMIENTO MÉDICO? *</p>
           <select name="" onchange="renderTreatment()" id="treatmentChkInput">
             <option value="">Seleccione una opción</option>
             <option value="si">Si</option>
@@ -294,8 +305,9 @@
           <p class="typ-lead">¿CUAL?</p><input id="treatmentInput" type="text" maxlength="100" class="formInput"
             placeholder="Ingrese nombre del tratamiento">
         </div>
+        <h3 class="formSectionTitle"><i class="fa-solid fa-pills" aria-hidden="true"></i>Medicación</h3>
         <div class="formTableBlock">
-          <p class="typ-lead">MEDICACIÓN (si corresponde)</p>
+          <p class="typ-small tableHint">Completá solo si corresponde. Podés agregar el medicamento aunque no tengas el horario a mano.</p>
 
           <div class="formTableWrap">
             <table class="formTable">
@@ -342,12 +354,10 @@
             </table>
           </div>
 
-          <p class="typ-tiny tableHint">
-            Si no toma medicación, podés dejarlo en blanco.
-          </p>
+          
         </div>
         <div class="formLine ">
-          <p class="typ-lead">¿TIENE CONTRAINDICADO ALGÚN MEDICAMENTO?</p>
+          <p class="typ-lead">¿TIENE CONTRAINDICADO ALGÚN MEDICAMENTO? *</p>
           <select name="" onchange="renderContraindicated()" id="contraindicatedChkInput">
             <option value="">Seleccione una opción</option>
             <option value="si">Si</option>
@@ -369,13 +379,28 @@
   <section class="finalFormPart">
     <div class="flex">
       <input type="checkbox" name="" id="authorizationChkInput" />
-      <p class="typ-body">Autorizo del 7 al 14 de enero de 2026 a Patricia Durdos y al cuerpo de monitores a tomar las
+      <p class="typ-body">Autorizo del 7 al 14 de enero de 2027 a Patricia Durdos y al cuerpo de monitores a tomar las
         decisiones que consideren convenientes para la salud y el bienestar de mi hijo/a</p>
+    </div>
+    <div class="flex" id="privacyBlock">
+      <input type="checkbox" name="" id="privacyChkInput" />
+      <p class="typ-body">Acepto que Moval guarde los datos personales y de salud de mi hijo/a que completé en esta
+        ficha (enfermedades, tratamientos, medicación y contraindicaciones).
+        <span class="typ-tiny privacyDetail">
+          Se usarán únicamente para cuidar su salud y bienestar durante el campamento y para la organización del mismo.
+          Solo tendrán acceso la organización y el cuerpo de monitores, se tratarán con confidencialidad y no se
+          compartirán con terceros salvo ante una emergencia médica. Se conservarán el tiempo necesario para esos fines.
+          Podés solicitar el acceso, la rectificación o la eliminación de estos datos (Ley N° 18.331 de Protección de
+          Datos Personales) comunicándote por WhatsApp al 098 181 614.
+        </span>
+      </p>
     </div>
     <button class="btnPrimary" id="submitFormBtn">Enviar Ficha</button>
   </section>
-  <script src="/js/index.js"></script>
-  <script src="/js/form.js"></script>
+  <script src="./js/config.js"></script>
+  <script src="./js/registration.js"></script>
+  <script src="./js/index.js"></script>
+  <script src="./js/form.js"></script>
 </body>
 
 </html>
